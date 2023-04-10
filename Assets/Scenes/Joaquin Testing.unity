@@ -1602,11 +1602,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
       propertyPath: maxStamina
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
       propertyPath: playerSpeed
-      value: 5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
+      propertyPath: staminaDrain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
+      propertyPath: staminaRegen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
+      propertyPath: hasRegenerated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
+      propertyPath: weAreSprinting
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904459, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
       propertyPath: m_RootOrder

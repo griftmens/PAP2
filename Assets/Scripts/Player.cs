@@ -36,16 +36,21 @@ public class Player : MonoBehaviour
     bool groundedPlayer, isShooting;
     int jumpedTimes;
     int hpOrig;
+    float newPlayerStamina;
     #endregion
 
     void Start()
     {
         hpOrig = hp;
+        playerStamina = maxStamina;
+        hasRegenerated = true;
+        weAreSprinting = false;
     }
 
     void Update()
     {
         Movemente();
+        Debug.Log(playerSpeed);
     }
 
     void Movemente(){
@@ -66,9 +71,30 @@ public class Player : MonoBehaviour
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.LeftShift) && playerStamina > 0){
-            controller.Move(move * Time.deltaTime * (playerSpeed * 1.2f));
-            playerStamina--;
+        if(Input.GetKey(KeyCode.LeftShift) && playerStamina > 0 && hasRegenerated == true ){
+            weAreSprinting = true;
+            controller.Move(move * Time.deltaTime * (playerSpeed * 1.5f));
+            Stamina();
+        } else if (playerStamina < maxStamina) {
+            hasRegenerated = false;
+            weAreSprinting = false;
+            controller.Move(move * Time.deltaTime * playerSpeed);
+            RegenStamina();
         }
+    }
+
+    void Stamina() {
+        playerStamina = (playerStamina - staminaDrain);
+    }
+
+    void RegenStamina() {
+        playerStamina += staminaRegen;
+        if (playerStamina == maxStamina) {
+            hasRegenerated = true;
+        }
+    }
+
+    void Sprint() {
+        //
     }
 }
