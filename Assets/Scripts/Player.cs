@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     #region  Headers
-    [Header("----- Controller -----")]
+    [Header("----- Components -----")]
     [SerializeField] CharacterController controller;
 
     [Header("----- Player Stats -----")]
