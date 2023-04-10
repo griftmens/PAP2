@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,9 +44,11 @@ public class Player : MonoBehaviour
     void Start()
     {
         hpOrig = hp;
+        gameManager.instance.HPTotal.text = hp.ToString("F0");
         playerStamina = maxStamina;
         hasRegenerated = true;
         weAreSprinting = false;
+        UIUpdate();
     }
 
     void Update()
@@ -97,5 +100,10 @@ public class Player : MonoBehaviour
 
     void Sprint() {
         //
+    }
+    void UIUpdate()
+    {
+        gameManager.instance.HPBar.fillAmount = (float)hp / (float)hpOrig;
+        gameManager.instance.HPCurrent.text = hp.ToString("F0");
     }
 }
