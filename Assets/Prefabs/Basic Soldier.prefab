@@ -173,7 +173,7 @@ MonoBehaviour:
   FireRate: 0.5
   ShotDistance: 10
   ShotDamage: 1
-  BulletSpeed: 10
+  BulletSpeed: 20
   Bullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
 --- !u!4 &5561730842156337880 stripped
 Transform:

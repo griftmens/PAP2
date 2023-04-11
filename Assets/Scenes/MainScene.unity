@@ -259,6 +259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1586080507}
     m_Modifications:
+    - target: {fileID: 1491183282, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: BulletSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (1)
