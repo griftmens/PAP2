@@ -54,7 +54,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movemente();
-        Debug.Log(playerSpeed);
     }
 
     void Movemente(){
