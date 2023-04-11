@@ -71,6 +71,11 @@ public class gameManager : MonoBehaviour
 
     public void Restart() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = timeScaleOg;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        activeMenu.SetActive(false);
+        activeMenu = null;
     }
 
     public void Quit() {
