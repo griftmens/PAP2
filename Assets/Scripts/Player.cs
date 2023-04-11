@@ -53,7 +53,12 @@ public class Player : MonoBehaviour, IDamage
 
     void Update()
     {
-        Movemente();
+        if (gameManager.instance.activeMenu == null) {
+            Movemente();
+            if (!isShooting && Input.GetButton("Fire1")) {
+                StartCoroutine(Shoot());
+            }
+        }
     }
 
     void Movemente(){
@@ -98,7 +103,7 @@ public class Player : MonoBehaviour, IDamage
     {
         isShooting = true;
         RaycastHit hit;
-        if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootRange))
+        if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit))
         {
             IDamage damageable = hit.collider.GetComponent<IDamage>();
             if (damageable != null)
