@@ -20,8 +20,8 @@ public class Player : MonoBehaviour
     [SerializeField] int jumpHeight;
 
     [Header("----- Gun Stats -----")]
-    [SerializeField] float shootRange;
-    [SerializeField] int shootDist;
+    [SerializeField] float shootRate;
+    [SerializeField] int shootRange;
     [SerializeField] int shootDamage;
 
     [Header("----- Stamina -----")]
@@ -84,6 +84,30 @@ public class Player : MonoBehaviour
             controller.Move(move * Time.deltaTime * playerSpeed);
             RegenStamina();
         }
+    }
+    public void TakeDamage(int Damage)
+    {
+        hp -= Damage;
+        UIUpdate();
+        if(hp <= 0)
+        {
+            gameManager.instance.PlayerDead();
+        }
+    }
+    IEnumerator Shoot()
+    {
+        isShooting = true;
+        RaycastHit hit;
+        if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootRange))
+        {
+            IDamage damageable = hit.collider.GetComponent<IDamage>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(shootDamage);
+            }
+        }
+        yield return new WaitForSeconds(shootRate);
+        isShooting = false;
     }
 
     void Stamina() {
