@@ -862,10 +862,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1586080507}
     m_Modifications:
-    - target: {fileID: 529571781415475500, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier
@@ -1734,10 +1730,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8839840777967022619, guid: 093333c688aedf64f97ab9701563a924, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 093333c688aedf64f97ab9701563a924, type: 3}
 --- !u!1001 &1209493416
@@ -2224,10 +2216,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1586080507}
     m_Modifications:
-    - target: {fileID: 5142881157043526819, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8099427341281527455, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
       propertyPath: m_RootOrder
       value: 8
