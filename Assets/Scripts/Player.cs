@@ -25,12 +25,12 @@ public class Player : MonoBehaviour
     [SerializeField] int shootDamage;
 
     [Header("----- Stamina -----")]
-    [SerializeField] float playerStamina;
-    [SerializeField] float maxStamina;
+    [SerializeField] int playerStamina;
+    [SerializeField] int maxStamina;
     [SerializeField] bool hasRegenerated;
     [SerializeField] bool weAreSprinting;
-    [Range(0, 50)][SerializeField] float staminaDrain;
-    [Range(0, 50)][SerializeField] float staminaRegen;
+    [Range(0, 50)][SerializeField] int staminaDrain;
+    [Range(0, 50)][SerializeField] int staminaRegen;
     #endregion
 
     #region Other Variables
@@ -38,14 +38,14 @@ public class Player : MonoBehaviour
     bool groundedPlayer, isShooting;
     int jumpedTimes;
     int hpOrig;
-    float newPlayerStamina;
+    float staminaOrig;
     #endregion
 
     void Start()
     {
         hpOrig = hp;
-        gameManager.instance.HPTotal.text = hp.ToString("F0");
         playerStamina = maxStamina;
+        gameManager.instance.HPTotal.text = hp.ToString("F0");
         hasRegenerated = true;
         weAreSprinting = false;
         UIUpdate();
@@ -104,5 +104,6 @@ public class Player : MonoBehaviour
     {
         gameManager.instance.HPBar.fillAmount = (float)hp / (float)hpOrig;
         gameManager.instance.HPCurrent.text = hp.ToString("F0");
+        gameManager.instance.StamBar.fillAmount = (float)playerStamina / (float)staminaOrig;
     }
 }
