@@ -11,7 +11,7 @@ public class Bullets : MonoBehaviour
     {
         Destroy(gameObject, Timer);
     }
-    public void OnTrigger(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         IDamage Damageable = other.GetComponent<IDamage>();
         if (Damageable != null)

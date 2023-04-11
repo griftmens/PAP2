@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee59daa73af0e543942a2ab9579a6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 0}
+  model: {fileID: 6569270046750740429}
   agent: {fileID: 91317748}
   Headpos: {fileID: 6547412631514409279}
   Shootpos: {fileID: 827010349462612869}
@@ -178,5 +178,10 @@ MonoBehaviour:
 --- !u!4 &6547412631514409279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4866435639462212, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+  m_PrefabInstance: {fileID: 6542706501923807355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &6569270046750740429 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 137043864916570038, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
   m_PrefabInstance: {fileID: 6542706501923807355}
   m_PrefabAsset: {fileID: 0}

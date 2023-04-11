@@ -92,6 +92,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+--- !u!137 &5533045723659508530 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 137910950423894358, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+  m_PrefabInstance: {fileID: 5557625019298677348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5559020877082142410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1471741602374830, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
@@ -158,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee59daa73af0e543942a2ab9579a6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 0}
+  model: {fileID: 5533045723659508530}
   agent: {fileID: 1491183281}
   Headpos: {fileID: 5561730842156337880}
   Shootpos: {fileID: 7966388671250667300}
