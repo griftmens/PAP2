@@ -25,7 +25,7 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] int shootDamage;
 
     [Header("----- Stamina -----")]
-    [SerializeField] int playerStamina;
+    [SerializeField] float playerStamina;
     [SerializeField] int maxStamina;
     [SerializeField] bool hasRegenerated;
     [SerializeField] bool weAreSprinting;
@@ -76,13 +76,19 @@ public class Player : MonoBehaviour, IDamage
             playerVelocity.y = jumpHeight;
         }
 
-
-        if (Input.GetKey(KeyCode.LeftShift) && playerStamina > 0 && hasRegenerated == true) {
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
             weAreSprinting = true;
-            controller.Move(move * Time.deltaTime * (playerSpeed * 1.5f));
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            weAreSprinting = false;
+        }
+
+        if (weAreSprinting && playerStamina > 0) {
+            controller.Move(move * Time.deltaTime * (playerSpeed * 2f));
             Stamina();
         } else if (playerStamina < maxStamina) {
-            hasRegenerated = false;
             weAreSprinting = false;
             controller.Move(move * Time.deltaTime * playerSpeed);
             RegenStamina();
@@ -121,14 +127,16 @@ public class Player : MonoBehaviour, IDamage
     }
 
     void Stamina() {
-        playerStamina = (playerStamina - staminaDrain);
+        playerStamina = (playerStamina - staminaDrain * Time.deltaTime);
+        UIUpdate();
     }
 
     void RegenStamina() {
-        playerStamina += staminaRegen;
+        playerStamina += staminaRegen * Time.deltaTime;
         if (playerStamina == maxStamina) {
             hasRegenerated = true;
         }
+        UIUpdate();
     }
     void UIUpdate()
     {
