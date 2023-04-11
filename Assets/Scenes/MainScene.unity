@@ -1222,6 +1222,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8839840777967022619, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 093333c688aedf64f97ab9701563a924, type: 3}
 --- !u!1001 &1209493416
@@ -1318,7 +1322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
       propertyPath: maxStamina
-      value: 0
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
       propertyPath: shootRange
@@ -1326,10 +1330,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
       propertyPath: playerSpeed
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
       propertyPath: shootDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
+      propertyPath: staminaDrain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
+      propertyPath: staminaRegen
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904459, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
