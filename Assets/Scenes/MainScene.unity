@@ -862,6 +862,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1586080507}
     m_Modifications:
+    - target: {fileID: 529571781415475500, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier
@@ -1824,34 +1828,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
-      propertyPath: shootRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
-      propertyPath: maxStamina
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
-      propertyPath: shootRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
-      propertyPath: playerSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
-      propertyPath: shootDamage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
-      propertyPath: staminaDrain
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5504498987805904458, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
-      propertyPath: staminaRegen
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5504498987805904459, guid: a9c64ffa1343fe04db9e92cd3a126c33, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2022,6 +1998,10 @@ PrefabInstance:
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194831141198528255, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
@@ -2244,6 +2224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1586080507}
     m_Modifications:
+    - target: {fileID: 5142881157043526819, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8099427341281527455, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
       propertyPath: m_RootOrder
       value: 8
