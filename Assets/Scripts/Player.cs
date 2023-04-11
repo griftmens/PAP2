@@ -70,15 +70,12 @@ public class Player : MonoBehaviour, IDamage
         }
 
         move = (transform.right * Input.GetAxis("Horizontal"))+ (transform.forward * Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
 
         if(Input.GetButtonDown("Jump") && jumpedTimes < jumpMaxTimes){
             jumpedTimes++;
             playerVelocity.y = jumpHeight;
         }
 
-        playerVelocity.y -= gravity * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.LeftShift) && playerStamina > 0 && hasRegenerated == true) {
             weAreSprinting = true;
@@ -90,6 +87,13 @@ public class Player : MonoBehaviour, IDamage
             controller.Move(move * Time.deltaTime * playerSpeed);
             RegenStamina();
         }
+        else
+        {
+            controller.Move(move * Time.deltaTime * playerSpeed);
+        }
+
+        playerVelocity.y -= gravity * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
     }
     public void TakeDamage(int Damage)
     {
