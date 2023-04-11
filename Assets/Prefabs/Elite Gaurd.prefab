@@ -142,7 +142,7 @@ MonoBehaviour:
   Shootpos: {fileID: 5711708909543596257}
   Health: 15
   PlayerFaceSpeed: 20
-  SightAngle: 90
+  SightAngle: 180
   FireRate: 0.2
   ShotDistance: 10
   ShotDamage: 5
