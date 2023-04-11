@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elite Gaurd
       objectReference: {fileID: 0}
+    - target: {fileID: 1981860918171908, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4555062712112460, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -103,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 0}
   agent: {fileID: 2001421510}
-  Headpos: {fileID: 0}
+  Headpos: {fileID: 8104265739315521725}
   Shootpos: {fileID: 8104343949788379505}
   Health: 15
   PlayerFaceSpeed: 20
@@ -127,7 +131,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -135,6 +139,11 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!4 &8104265739315521725 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4220266448927598, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+  m_PrefabInstance: {fileID: 8103907087174505427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8104343949788379505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4140129689430690, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}

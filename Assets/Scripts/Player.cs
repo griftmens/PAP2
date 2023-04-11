@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     {
         hpOrig = hp;
         playerStamina = maxStamina;
-        gameManager.instance.HPTotal.text = hp.ToString("F0");
+        //gameManager.instance.HPTotal.text = hp.ToString("F0");
         hasRegenerated = true;
         weAreSprinting = false;
         UIUpdate();
@@ -74,16 +74,16 @@ public class Player : MonoBehaviour
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.LeftShift) && playerStamina > 0 && hasRegenerated == true ){
-            weAreSprinting = true;
-            controller.Move(move * Time.deltaTime * (playerSpeed * 1.5f));
-            Stamina();
-        } else if (playerStamina < maxStamina) {
-            hasRegenerated = false;
-            weAreSprinting = false;
-            controller.Move(move * Time.deltaTime * playerSpeed);
-            RegenStamina();
-        }
+        // if(Input.GetKey(KeyCode.LeftShift) && playerStamina > 0 && hasRegenerated == true ){
+        //     weAreSprinting = true;
+        //     controller.Move(move * Time.deltaTime * (playerSpeed * 1.5f));
+        //     Stamina();
+        // } else if (playerStamina < maxStamina) {
+        //     hasRegenerated = false;
+        //     weAreSprinting = false;
+        //     controller.Move(move * Time.deltaTime * playerSpeed);
+        //     RegenStamina();
+        // }
     }
     public void TakeDamage(int Damage)
     {
@@ -110,24 +110,20 @@ public class Player : MonoBehaviour
         isShooting = false;
     }
 
-    void Stamina() {
-        playerStamina = (playerStamina - staminaDrain);
-    }
+    // void Stamina() {
+    //     playerStamina = (playerStamina - staminaDrain);
+    // }
 
-    void RegenStamina() {
-        playerStamina += staminaRegen;
-        if (playerStamina == maxStamina) {
-            hasRegenerated = true;
-        }
-    }
-
-    void Sprint() {
-        //
-    }
+    // void RegenStamina() {
+    //     playerStamina += staminaRegen;
+    //     if (playerStamina == maxStamina) {
+    //         hasRegenerated = true;
+    //     }
+    // }
     void UIUpdate()
     {
         gameManager.instance.HPBar.fillAmount = (float)hp / (float)hpOrig;
-        gameManager.instance.HPCurrent.text = hp.ToString("F0");
-        gameManager.instance.StamBar.fillAmount = (float)playerStamina / (float)staminaOrig;
+        //gameManager.instance.HPCurrent.text = hp.ToString("F0");
+        //gameManager.instance.StamBar.fillAmount = (float)playerStamina / (float)staminaOrig;
     }
 }

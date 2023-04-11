@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander
       objectReference: {fileID: 0}
+    - target: {fileID: 1047724519691324, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -103,7 +107,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -125,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 0}
   agent: {fileID: 91317748}
-  Headpos: {fileID: 6547438951492610009}
+  Headpos: {fileID: 6547412631514409279}
   Shootpos: {fileID: 6547455883962824989}
   Health: 10
   PlayerFaceSpeed: 10
@@ -135,9 +139,9 @@ MonoBehaviour:
   ShotDamage: 3
   BulletSpeed: 5
   Bullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
---- !u!4 &6547438951492610009 stripped
+--- !u!4 &6547412631514409279 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4910347132290978, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4866435639462212, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
   m_PrefabInstance: {fileID: 6542706501923807355}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6547455883962824989 stripped

@@ -51,15 +51,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 5504498987805904438}
   hp: 10
-  playerSpeed: 5
+  playerSpeed: 8
   gravity: 25
   jumpMaxTimes: 2
   jumpHeight: 10
-  shootRange: 0
-  shootDist: 0
-  shootDamage: 0
+  shootRate: 0.5
+  shootRange: 10
+  shootDamage: 1
   playerStamina: 0
-  maxStamina: 100
+  maxStamina: 0
   hasRegenerated: 0
   weAreSprinting: 0
   staminaDrain: 0
