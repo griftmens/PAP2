@@ -21,4 +21,10 @@ public class Door : MonoBehaviour
             SceneManager.LoadScene("Joaquin Test");
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player" && gameManager.instance.enemiesRemaining <= 0) {
+            gameManager.instance.UpdateGameGoal(0);
+        }
+    }
 }

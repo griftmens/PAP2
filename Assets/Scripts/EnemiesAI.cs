@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -78,7 +77,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
     {
         IsShooting= true;
         GameObject bullet = Instantiate(Bullet, Shootpos.position, Bullet.transform.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * BulletSpeed;
+        bullet.GetComponent<Rigidbody>().velocity = PlayerDirection.normalized * BulletSpeed;
         yield return new WaitForSeconds(FireRate);
         IsShooting= false;
     }
@@ -104,7 +103,9 @@ public class EnemiesAI : MonoBehaviour, IDamage
         StartCoroutine(FlashColor());
         if(Health <= 0)
         {
-            gameManager.instance.UpdateGameGoal(-1);
+            if (gameManager.instance.enemiesRemaining > 0 ) {
+                gameManager.instance.UpdateGameGoal(-1);
+            }
             Destroy(gameObject);
         }
     }
