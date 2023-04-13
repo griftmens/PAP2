@@ -52,6 +52,7 @@ MonoBehaviour:
   controller: {fileID: 5504498987805904438}
   hp: 10
   playerSpeed: 5
+  sprintMultiplier: 2
   gravity: 25
   jumpMaxTimes: 2
   jumpHeight: 10
@@ -60,10 +61,12 @@ MonoBehaviour:
   shootDamage: 1
   playerStamina: 0
   maxStamina: 10
-  hasRegenerated: 0
-  weAreSprinting: 0
   staminaDrain: 2
-  staminaRegen: 1
+  staminaRegen: 2
+  tiredMultiplier: 0.5
+  tiredTime: 2.5
+  tired: 0
+  weAreSprinting: 0
 --- !u!33 &5504498987805904437
 MeshFilter:
   m_ObjectHideFlags: 0
