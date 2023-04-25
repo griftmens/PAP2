@@ -17,7 +17,7 @@ public class BossAI : MonoBehaviour, IDamage
     [SerializeField] int bossSightAngle;
 
     [Header("-----Gun Stats-----")]
-    [Range((float).1, 1)][SerializeField] float bossFireRate;
+    [Range((float).1, 5)][SerializeField] float bossFireRate;
     [Range(1, 10)][SerializeField] int bossShotDistance;
     [Range(1, 100)][SerializeField] int bossShotDamage;
     [SerializeField] float bossBulletSpeed;

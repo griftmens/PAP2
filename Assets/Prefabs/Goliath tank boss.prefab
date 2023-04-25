@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 6389840249427308727}
   - component: {fileID: 1494800825722880808}
   m_Layer: 0
-  m_Name: Black Track
+  m_Name: Goliath tank boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -346,14 +346,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d136caefc17b948b8c7850d1b87bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossmodel: {fileID: 0}
+  bossmodel: {fileID: 5459888632059312925}
   bossagent: {fileID: 1494800825722880808}
   bossHeadpos: {fileID: 6856125410999200384}
   bossShootpos: {fileID: 6856125410999200384}
   bossHealth: 20
   bossPlayerFaceSpeed: 1
   bossSightAngle: 90
-  bossFireRate: 1
+  bossFireRate: 3.1
   bossShotDistance: 10
   bossShotDamage: 5
   bossBulletSpeed: 3
