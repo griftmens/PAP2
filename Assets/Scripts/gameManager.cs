@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEditor;
 
 public class gameManager : MonoBehaviour
 {
@@ -13,12 +14,14 @@ public class gameManager : MonoBehaviour
     [Header("----- Player -----")]
     public GameObject player;
     public Player playerScript;
+    public GameObject playerSpawnPos;
 
     [Header("----- UI Elements / Menus -----")]
     public GameObject activeMenu;
     public GameObject pauseMenu;
     public GameObject winMenu;
     public GameObject loseMenu;
+    public GameObject checkpointMenu;
     public Image HPBar;
     public TextMeshProUGUI HPCurrent;
     public TextMeshProUGUI HPTotal;
@@ -35,6 +38,7 @@ public class gameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<Player>();
+        playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
         timeScaleOg = Time.timeScale;
     }
 
@@ -71,11 +75,7 @@ public class gameManager : MonoBehaviour
 
     public void Restart() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = timeScaleOg;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        activeMenu.SetActive(false);
-        activeMenu = null;
+        Resume();
     }
 
     public void Quit() {
@@ -89,9 +89,7 @@ public class gameManager : MonoBehaviour
 
         if (enemiesRemaining <= 0)
         {
-            activeMenu = winMenu;
-            activeMenu.SetActive(true);
-            Pause();
+            StartCoroutine(PlayerWin());
         }
     }
 
@@ -101,4 +99,13 @@ public class gameManager : MonoBehaviour
         activeMenu = loseMenu;
         activeMenu.SetActive(true);
     }
+
+    IEnumerator PlayerWin()
+    {
+        yield return new WaitForSeconds(3);
+        activeMenu = winMenu;
+        activeMenu.SetActive(true);
+        Pause();
+    }
+
 }

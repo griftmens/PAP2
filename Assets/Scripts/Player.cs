@@ -21,9 +21,13 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] int jumpHeight;
 
     [Header("----- Gun Stats -----")]
+    public List<GunStats> gunsInventory = new List<GunStats>();
     [SerializeField] float shootRate;
     [SerializeField] int shootRange;
     [SerializeField] int shootDamage;
+    public MeshRenderer gunMaterial;
+    public MeshFilter gunModel;
+    public int selectedGun;
 
     [Header("----- Stamina -----")]
     [SerializeField] float playerStamina;
@@ -58,6 +62,7 @@ public class Player : MonoBehaviour, IDamage
     {
         if (gameManager.instance.activeMenu == null) {
             Movemente();
+            SelectGun();
             if (!isShooting && Input.GetButton("Fire1")) {
                 StartCoroutine(Shoot());
             }
@@ -133,7 +138,7 @@ public class Player : MonoBehaviour, IDamage
     {
         isShooting = true;
         RaycastHit hit;
-        if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit))
+        if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootRange))
         {
             IDamage damageable = hit.collider.GetComponent<IDamage>();
             if (damageable != null)
@@ -160,5 +165,48 @@ public class Player : MonoBehaviour, IDamage
         gameManager.instance.HPBar.fillAmount = (float)hp / (float)hpOrig;
         //gameManager.instance.HPCurrent.text = hp.ToString("F0");
         gameManager.instance.StamBar.fillAmount = (float) playerStamina / (float)staminaOrig;
+    }
+
+    public void RespawnPlayer()
+    {
+        controller.enabled = false;
+        transform.position = gameManager.instance.playerSpawnPos.transform.position;
+        controller.enabled = true;
+        hp = hpOrig;
+        UIUpdate();
+    }
+
+    public void PickupGun(GunStats gunStat)
+    {
+        gunsInventory.Add(gunStat);
+        shootDamage = gunStat.shootDamage;
+        shootRange = gunStat.shootRange;
+        shootRate = gunStat.shootRate;
+
+        gunModel.sharedMesh = gunStat.model.GetComponent<MeshFilter>().sharedMesh;
+        gunMaterial.sharedMaterial = gunStat.model.GetComponent<MeshRenderer>().sharedMaterial;
+    }
+
+    void SelectGun()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && selectedGun < gunsInventory.Count - 1)
+        {
+            selectedGun++;
+            ChangeGun();
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0 && selectedGun > 0)
+        {
+            selectedGun--;
+            ChangeGun();
+        }
+    }
+
+    void ChangeGun()
+    {
+        shootDamage = gunsInventory[selectedGun].shootDamage;
+        shootRange = gunsInventory[selectedGun].shootRange;
+        shootRate = gunsInventory[selectedGun].shootRate;
+        gunModel.mesh = gunsInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
+        gunMaterial.material = gunsInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
     }
 }
