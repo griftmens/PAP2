@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootDamage: 1
   shootRate: 0.7
-  shootRange: 10
+  shootRange: 20
   model: {fileID: 134812, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
   gunShotAud: {fileID: 0}

@@ -8,6 +8,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
     [Header("-----Components-----")]
     [SerializeField] Renderer model;
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] Animator anim;
     [SerializeField] Transform Headpos;
     [SerializeField] Transform Shootpos;
 
@@ -15,6 +16,10 @@ public class EnemiesAI : MonoBehaviour, IDamage
     [SerializeField] int Health;
     [SerializeField] int PlayerFaceSpeed;
     [SerializeField] int SightAngle;
+    [SerializeField] int roamPauseTime;
+    [SerializeField] int roamDistance;
+    [SerializeField] float animTransSpeed;
+    [SerializeField] GameObject drop;
 
     [Header("-----Gun Stats-----")]
     [Range((float).1, 1)][SerializeField] float FireRate;
@@ -28,25 +33,54 @@ public class EnemiesAI : MonoBehaviour, IDamage
     Vector3 PlayerDirection;
     float AngleToPlayer;
     float StopDistance;
+    bool destinationChosen;
+    Vector3 startingPos;
+
+    float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager.instance.UpdateGameGoal(1);
         StopDistance = agent.stoppingDistance;
+        startingPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerinRange)
+        if(agent.isActiveAndEnabled)
         {
-            if (CanSee())
+            speed = Mathf.Lerp(speed, agent.velocity.normalized.magnitude, Time.deltaTime * 3);
+            anim.SetFloat("Speed", agent.velocity.normalized.magnitude);
+            if (PlayerinRange && !CanSee())
             {
-
+                StartCoroutine(Roam());
             }
+            else if (agent.destination != gameManager.instance.player.transform.position)
+                StartCoroutine(Roam());
         }
     }
+
+    IEnumerator Roam()
+    {
+        if(!destinationChosen && agent.remainingDistance < 0.05)
+        {
+            destinationChosen = true;
+            agent.stoppingDistance = 0;
+            yield return new WaitForSeconds(roamPauseTime);
+            destinationChosen = false;
+
+            Vector3 randPos = Random.insideUnitSphere * roamDistance;
+            randPos += startingPos;
+
+            NavMesh.SamplePosition(randPos, out NavMeshHit hit, roamDistance, 1);
+
+            agent.SetDestination(hit.position);
+            destinationChosen = false;
+        }
+    }
+
     bool CanSee()
     {
         PlayerDirection = (gameManager.instance.player.transform.position - Headpos.position);
@@ -76,6 +110,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
     IEnumerator Shoot()
     {
         IsShooting= true;
+        anim.SetTrigger("Shoot");
         GameObject bullet = Instantiate(Bullet, Shootpos.position, Bullet.transform.rotation);
         bullet.GetComponent<Rigidbody>().velocity = PlayerDirection.normalized * BulletSpeed;
         yield return new WaitForSeconds(FireRate);
@@ -93,20 +128,28 @@ public class EnemiesAI : MonoBehaviour, IDamage
         if (other.CompareTag("Player"))
         {
             PlayerinRange= false;
+            agent.stoppingDistance = 0;
         }
     }
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        agent.SetDestination(gameManager.instance.player.transform.position);
-        agent.stoppingDistance = 0;
-        StartCoroutine(FlashColor());
         if(Health <= 0)
         {
-            if (gameManager.instance.enemiesRemaining > 0 ) {
-                gameManager.instance.UpdateGameGoal(-1);
-            }
-            Destroy(gameObject);
+            StopAllCoroutines();
+            if(drop)
+                Instantiate(drop, transform.position, drop.transform.rotation);
+            gameManager.instance.UpdateGameGoal(-1);
+            anim.SetBool("Dead", true);
+            GetComponent<CapsuleCollider>().enabled = false;
+            agent.enabled = false;
+        }
+        else
+        {
+            agent.SetDestination(gameManager.instance.player.transform.position);
+            agent.stoppingDistance = 0;
+            //anim.SetTrigger("Damage");
+            StartCoroutine(FlashColor());
         }
     }
     IEnumerator FlashColor()

@@ -139,9 +139,9 @@ MonoBehaviour:
   jumpMaxTimes: 2
   jumpHeight: 10
   gunsInventory: []
-  shootRate: 0.5
-  shootRange: 10
-  shootDamage: 1
+  shootRate: 0
+  shootRange: 0
+  shootDamage: 0
   gunMaterial: {fileID: 1975337211}
   gunModel: {fileID: 1974207035}
   selectedGun: 0
