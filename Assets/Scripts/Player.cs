@@ -183,8 +183,8 @@ public class Player : MonoBehaviour, IDamage
         shootRange = gunStat.shootRange;
         shootRate = gunStat.shootRate;
 
-        gunModel.sharedMesh = gunStat.model.GetComponent<MeshFilter>().sharedMesh;
-        gunMaterial.sharedMaterial = gunStat.model.GetComponent<MeshRenderer>().sharedMaterial;
+        gunModel.sharedMesh = gunStat.model.GetComponentInChildren<MeshFilter>().sharedMesh;
+        gunMaterial.sharedMaterial = gunStat.model.GetComponentInChildren<MeshRenderer>().sharedMaterial;
     }
 
     void SelectGun()

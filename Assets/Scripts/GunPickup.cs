@@ -10,8 +10,8 @@ public class GunPickup : MonoBehaviour
 
     private void Start()
     {
-        model.sharedMesh = gun.model.GetComponent<MeshFilter>().sharedMesh;
-        material.sharedMaterial = gun.model.GetComponent<MeshRenderer>().sharedMaterial;
+        model.sharedMesh = gun.model.GetComponentInChildren<MeshFilter>().sharedMesh;
+        material.sharedMaterial = gun.model.GetComponentInChildren<MeshRenderer>().sharedMaterial;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SmallBlaster
   m_EditorClassIdentifier: 
   shootDamage: 1
-  shootRate: 0.5
+  shootRate: 0.7
   shootRange: 10
-  model: {fileID: 100000, guid: 5f9b176058917ba49a8059f6da098866, type: 3}
+  model: {fileID: 134812, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
   gunShotAud: {fileID: 0}
