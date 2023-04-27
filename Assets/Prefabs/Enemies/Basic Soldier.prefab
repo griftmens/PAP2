@@ -16,6 +16,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5508251271682042256}
     - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+      propertyPath: dropChance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: roamDistance
       value: 2
       objectReference: {fileID: 0}

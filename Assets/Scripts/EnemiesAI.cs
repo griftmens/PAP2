@@ -20,6 +20,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
     [SerializeField] int roamDistance;
     [SerializeField] float animTransSpeed;
     [SerializeField] GameObject drop;
+    [SerializeField] int dropChance;
 
     [Header("-----Gun Stats-----")]
     [Range((float).1, 1)][SerializeField] float FireRate;
@@ -137,8 +138,12 @@ public class EnemiesAI : MonoBehaviour, IDamage
         if(Health <= 0)
         {
             StopAllCoroutines();
-            if(drop)
-                Instantiate(drop, transform.position, drop.transform.rotation);
+            if (drop)
+            {
+                int rand = Random.Range(1, dropChance);
+                if(rand == 1)
+                    Instantiate(drop, transform.position, drop.transform.rotation);
+            }
             gameManager.instance.UpdateGameGoal(-1);
             anim.SetBool("Dead", true);
             GetComponent<CapsuleCollider>().enabled = false;

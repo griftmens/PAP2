@@ -17,3 +17,4 @@ MonoBehaviour:
   shootRange: 20
   model: {fileID: 134812, guid: 3c81b162a1af44348b8994f7040514d4, type: 3}
   gunShotAud: {fileID: 0}
+  ammo: 10

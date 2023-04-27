@@ -28,6 +28,7 @@ public class Player : MonoBehaviour, IDamage
     public MeshRenderer gunMaterial;
     public MeshFilter gunModel;
     public int selectedGun;
+    public int ammoCount;
 
     [Header("----- Stamina -----")]
     [SerializeField] float playerStamina;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour, IDamage
         if (gameManager.instance.activeMenu == null) {
             Movemente();
             SelectGun();
-            if (!isShooting && Input.GetButton("Fire1")) {
+            if (!isShooting && Input.GetButton("Fire1") && ammoCount > 0 && gunsInventory.Count > 0) {
                 StartCoroutine(Shoot());
             }
         }
@@ -137,6 +138,7 @@ public class Player : MonoBehaviour, IDamage
     IEnumerator Shoot()
     {
         isShooting = true;
+        UpdateAmmoCount(-1);
         RaycastHit hit;
         if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootRange))
         {
@@ -165,6 +167,7 @@ public class Player : MonoBehaviour, IDamage
         gameManager.instance.HPBar.fillAmount = (float)hp / (float)hpOrig;
         //gameManager.instance.HPCurrent.text = hp.ToString("F0");
         gameManager.instance.StamBar.fillAmount = (float) playerStamina / (float)staminaOrig;
+        gameManager.instance.AmmoCount.text = ammoCount.ToString("F0");
     }
 
     public void RespawnPlayer()
@@ -185,6 +188,13 @@ public class Player : MonoBehaviour, IDamage
 
         gunModel.sharedMesh = gunStat.model.GetComponentInChildren<MeshFilter>().sharedMesh;
         gunMaterial.sharedMaterial = gunStat.model.GetComponentInChildren<MeshRenderer>().sharedMaterial;
+        UpdateAmmoCount(gunStat.ammo);
+    }
+
+    public void UpdateAmmoCount(int ammo)
+    {
+        ammoCount += ammo;
+        UIUpdate();
     }
 
     void SelectGun()

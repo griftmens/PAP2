@@ -10,4 +10,5 @@ public class GunStats : ScriptableObject
     public int shootRange;
     public GameObject model;
     public AudioClip gunShotAud;
+    public int ammo;
 }
