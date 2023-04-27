@@ -11,6 +11,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
     [SerializeField] Animator anim;
     [SerializeField] Transform Headpos;
     [SerializeField] Transform Shootpos;
+    [SerializeField] AudioSource aud;
 
     [Header("-----Stats-----")]
     [SerializeField] int Health;
@@ -28,6 +29,10 @@ public class EnemiesAI : MonoBehaviour, IDamage
     [Range(1, 100)][SerializeField] int ShotDamage;
     [SerializeField] float BulletSpeed;
     [SerializeField] GameObject Bullet;
+
+    [Header("----- Audio -----")]
+    [SerializeField] AudioClip[] audShoot;
+    [SerializeField] [Range(0, 1)] float audShootVol;
 
     bool PlayerinRange;
     bool IsShooting;
@@ -110,7 +115,8 @@ public class EnemiesAI : MonoBehaviour, IDamage
     }
     IEnumerator Shoot()
     {
-        IsShooting= true;
+        aud.PlayOneShot(audShoot[Random.Range(0, audShoot.Length)], audShootVol);
+        IsShooting = true;
         anim.SetTrigger("Shoot");
         GameObject bullet = Instantiate(Bullet, Shootpos.position, Bullet.transform.rotation);
         bullet.GetComponent<Rigidbody>().velocity = PlayerDirection.normalized * BulletSpeed;

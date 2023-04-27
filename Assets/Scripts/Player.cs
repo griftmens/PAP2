@@ -9,6 +9,8 @@ public class Player : MonoBehaviour, IDamage
     #region  Headers
     [Header("----- Components -----")]
     [SerializeField] CharacterController controller;
+    [SerializeField] AudioSource aud;
+
 
     [Header("----- Player Stats -----")]
     [SerializeField] int hp;
@@ -39,6 +41,17 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] float tiredTime;
     [SerializeField] bool tired;
     [SerializeField] bool weAreSprinting;
+
+    [Header("----- Audio -----")]
+    [SerializeField] AudioClip[] audSteps;
+    [SerializeField] [Range(0, 1)] float audStepsVol;
+
+    [SerializeField] AudioClip[] audJump;
+    [SerializeField] [Range(0, 1)] float audJumpVol;
+
+    [SerializeField] AudioClip[] audDamage;
+    [SerializeField] [Range(0, 1)] float audDamageVol;
+
     #endregion
 
     #region Other Variables
@@ -47,6 +60,8 @@ public class Player : MonoBehaviour, IDamage
     int jumpedTimes;
     int hpOrig;
     float staminaOrig;
+    bool isPlayingSteps;
+
     #endregion
 
     void Start()
@@ -73,6 +88,10 @@ public class Player : MonoBehaviour, IDamage
     void Movemente() {
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0) {
+            if (!isPlayingSteps && move.normalized.magnitude > 0.5f)
+            {
+                StartCoroutine(playSteps());
+            }
             playerVelocity.y = 0f;
             jumpedTimes = 0;
         }
@@ -89,6 +108,7 @@ public class Player : MonoBehaviour, IDamage
         }
         if (Input.GetButtonDown("Jump") && jumpedTimes < jumpMaxTimes)
         {
+            aud.PlayOneShot(audJump[Random.Range(0, audJump.Length)], audJumpVol);
             jumpedTimes++;
             playerVelocity.y = jumpHeight;
         }
@@ -113,8 +133,22 @@ public class Player : MonoBehaviour, IDamage
         playerVelocity.y -= gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+
+    IEnumerator playSteps()
+    {
+        isPlayingSteps = true;
+        aud.PlayOneShot(audSteps[Random.Range(0, audSteps.Length)], audStepsVol);
+
+        if (!weAreSprinting)
+            yield return new WaitForSeconds(0.5f);
+        else
+            yield return new WaitForSeconds(0.3f);
+
+        isPlayingSteps = false;
+    }
     public void TakeDamage(int Damage)
     {
+        aud.PlayOneShot(audDamage[Random.Range(0, audDamage.Length)], audDamageVol);
         hp -= Damage;
         UIUpdate();
         if(hp <= 0)
@@ -137,6 +171,7 @@ public class Player : MonoBehaviour, IDamage
     }
     IEnumerator Shoot()
     {
+        aud.PlayOneShot(gunsInventory[selectedGun].gunShotAud, gunsInventory[selectedGun].gunShotAudVol);
         isShooting = true;
         UpdateAmmoCount(-1);
         RaycastHit hit;

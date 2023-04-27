@@ -10,5 +10,6 @@ public class GunStats : ScriptableObject
     public int shootRange;
     public GameObject model;
     public AudioClip gunShotAud;
+    [Range(0, 1)] public float gunShotAudVol;
     public int ammo;
 }
