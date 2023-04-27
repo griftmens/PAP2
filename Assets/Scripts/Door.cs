@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
+    Player player;
+    int actualScene;
+    int nextScene;
     // Start is called before the first frame update
     void Start()
     {
-        
+        actualScene = SceneManager.GetActiveScene().buildIndex;
+        nextScene = actualScene + 1;
     }
 
     // Update is called once per frame
@@ -16,10 +20,14 @@ public class Door : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Player" && gameManager.instance.enemiesRemaining <= 0) {
-            SceneManager.LoadScene("Joaquin Test");
+
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("Me estan tocando");
+        if (other.gameObject.tag == "Player" /*&& gameManager.instance.enemiesRemaining <= 0*/) {
+            SceneManager.LoadScene(nextScene);
             gameManager.instance.UpdateGameGoal(0);
+            //player.GetComponent<Player>().hp = player.GetComponent<Player>().hpOrig;
+            Debug.Log("estoy entrando");
         }
     }
 }

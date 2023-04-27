@@ -13,7 +13,7 @@ public class Player : MonoBehaviour, IDamage
 
 
     [Header("----- Player Stats -----")]
-    [SerializeField] int hp;
+    [SerializeField] public int hp;
     [SerializeField] float playerSpeed;
     [SerializeField] float sprintMultiplier;
 
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour, IDamage
     Vector3 playerVelocity, move;
     bool groundedPlayer, isShooting;
     int jumpedTimes;
-    int hpOrig;
+    public int hpOrig;
     float staminaOrig;
     bool isPlayingSteps;
 
@@ -108,7 +108,7 @@ public class Player : MonoBehaviour, IDamage
         }
         if (Input.GetButtonDown("Jump") && jumpedTimes < jumpMaxTimes)
         {
-            aud.PlayOneShot(audJump[Random.Range(0, audJump.Length)], audJumpVol);
+            //aud.PlayOneShot(audJump[Random.Range(0, audJump.Length)], audJumpVol);
             jumpedTimes++;
             playerVelocity.y = jumpHeight;
         }
