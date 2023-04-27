@@ -26,6 +26,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI HPCurrent;
     public TextMeshProUGUI HPTotal;
     public Image StamBar;
+    public TextMeshProUGUI AmmoCount;
     public TextMeshProUGUI enemiesRemainingText;
 
     public int enemiesRemaining;
