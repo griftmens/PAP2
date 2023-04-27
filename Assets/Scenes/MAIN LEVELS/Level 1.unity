@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -190,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_Name
       value: Squad Commander (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
@@ -248,6 +256,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -304,6 +316,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -362,6 +378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Soldier (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -408,120 +428,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
---- !u!1001 &347989687
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.3239284
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.921608
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.7403984
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1116360478614891590, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
-      propertyPath: m_Name
-      value: Gun - SmallBlaster
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
---- !u!1001 &351444026
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -86.320114
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 29.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 74.86901
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346098, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4704308422536346103, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
-      propertyPath: m_Name
-      value: Gun - MediumBlaster
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
 --- !u!1001 &389255286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -532,6 +438,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -590,6 +500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -646,6 +560,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -748,8 +666,126 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elite Gaurd (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8102493542771526359, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
+--- !u!1001 &692943275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.6544676
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.921608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1997101
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891587, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116360478614891590, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+      propertyPath: m_Name
+      value: Gun - SmallBlaster (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 92a3788fb93e8b748b995cda7ad38ef9, type: 3}
+--- !u!1001 &740036745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -79.77414
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.91946
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 68.7759
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206521, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447890400174206524, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
+      propertyPath: m_Name
+      value: Gun - HeavyBlaster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d3ecd55b5a0c6842bed150b039e1cf6, type: 3}
 --- !u!1001 &813476629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -760,6 +796,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -875,6 +915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Soldier (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -932,6 +976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Soldier (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -988,6 +1036,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -1056,7 +1108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5516013378011552254, guid: 093333c688aedf64f97ab9701563a924, type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 5516013378011552254, guid: 093333c688aedf64f97ab9701563a924, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1143,6 +1195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1199,6 +1255,10 @@ PrefabInstance:
     - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_Name
       value: Squad Commander (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
@@ -1257,6 +1317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Soldier (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -1313,6 +1377,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -1414,6 +1482,10 @@ PrefabInstance:
     - target: {fileID: 8102493542771526359, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
       propertyPath: m_Name
       value: Elite Gaurd
+      objectReference: {fileID: 0}
+    - target: {fileID: 8102493542771526359, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
@@ -1522,6 +1594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -1623,6 +1699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elite Gaurd (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8102493542771526359, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
 --- !u!1001 &1531903757
@@ -1635,6 +1715,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -1714,6 +1798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Soldier (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -1770,6 +1858,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -1872,6 +1964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elite Gaurd (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8102493542771526359, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
 --- !u!1001 &1686904294
@@ -1884,6 +1980,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
@@ -1942,6 +2042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander
       objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -1999,6 +2103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -2055,6 +2163,10 @@ PrefabInstance:
     - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_Name
       value: Squad Commander (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
@@ -2474,6 +2586,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Soldier (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -2530,6 +2646,10 @@ PrefabInstance:
     - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_Name
       value: Squad Commander (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
@@ -2645,6 +2765,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Squad Commander (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2701,6 +2825,10 @@ PrefabInstance:
     - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_Name
       value: Basic Soldier (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder

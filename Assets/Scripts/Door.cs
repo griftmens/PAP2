@@ -7,12 +7,10 @@ public class Door : MonoBehaviour
 {
     Player player;
     int actualScene;
-    public int nextScene;
     // Start is called before the first frame update
     void Start()
     {
         actualScene = SceneManager.GetActiveScene().buildIndex;
-        nextScene = actualScene + 1;
     }
 
     // Update is called once per frame
@@ -24,9 +22,8 @@ public class Door : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         Debug.Log("Me estan tocando");
         if (other.gameObject.tag == "Player" && gameManager.instance.enemiesRemaining <= 0) {
-            //SceneManager.LoadScene(nextScene);
-            gameManager.instance.StartWin();
-            //player.GetComponent<Player>().hp = player.GetComponent<Player>().hpOrig;
+            SceneManager.LoadScene(actualScene + 1);
+            gameManager.instance.playerScript.hp = gameManager.instance.playerScript.hpOrig;
             Debug.Log("estoy entrando");
         }
     }

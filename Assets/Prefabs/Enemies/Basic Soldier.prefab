@@ -22,10 +22,10 @@ PrefabInstance:
     - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: drop
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4704308422536346103, guid: 6c4c572d5160ce549918831f60fffc02, type: 3}
     - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: dropChance
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: audShootVol
@@ -85,15 +85,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.0857635
+      value: -2.6043396
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.92160654
+      value: 0.92160034
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.440004
+      value: 37.2
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_LocalRotation.w
