@@ -90,11 +90,6 @@ public class gameManager : MonoBehaviour
     {
         enemiesRemaining += amount;
         enemiesRemainingText.text = enemiesRemaining.ToString("F0");
-
-        if (dScene.GetComponent<Door>().nextScene == 3 && enemiesRemaining <= 0)
-        {
-            StartCoroutine(PlayerWin());
-        }
     }
 
     public void PlayerDead()
@@ -102,6 +97,10 @@ public class gameManager : MonoBehaviour
         Pause();
         activeMenu = loseMenu;
         activeMenu.SetActive(true);
+    }
+    public void StartWin()
+    {
+        StartCoroutine(PlayerWin());
     }
 
     IEnumerator PlayerWin()
