@@ -1655,10 +1655,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4543829338664524}
+  - component: {fileID: 1491183282}
   - component: {fileID: 95028430175513588}
   - component: {fileID: 9194831141198528255}
   - component: {fileID: 5366544975440386888}
-  - component: {fileID: 1491183282}
   - component: {fileID: 1491183281}
   m_Layer: 6
   m_Name: Robot_Soldier_White
@@ -1690,6 +1690,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1491183282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471741602374830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee59daa73af0e543942a2ab9579a6cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 137910950423894358}
+  agent: {fileID: 1491183281}
+  Headpos: {fileID: 4391696956590268}
+  Shootpos: {fileID: 7966388671250667300}
+  anim: {fileID: 0}
+  Health: 3
+  PlayerFaceSpeed: 20
+  SightAngle: 90
+  FireRate: 0.5
+  ShotDistance: 10
+  ShotDamage: 1
+  BulletSpeed: 20
+  Bullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
 --- !u!95 &95028430175513588
 Animator:
   serializedVersion: 5
@@ -1710,6 +1735,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!136 &9194831141198528255
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1737,30 +1763,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1491183282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471741602374830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee59daa73af0e543942a2ab9579a6cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 137910950423894358}
-  agent: {fileID: 1491183281}
-  Headpos: {fileID: 4391696956590268}
-  Shootpos: {fileID: 7966388671250667300}
-  Health: 3
-  PlayerFaceSpeed: 20
-  SightAngle: 90
-  FireRate: 0.5
-  ShotDistance: 10
-  ShotDamage: 1
-  BulletSpeed: 20
-  Bullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
 --- !u!195 &1491183281
 NavMeshAgent:
   m_ObjectHideFlags: 0

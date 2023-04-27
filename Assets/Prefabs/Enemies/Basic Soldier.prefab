@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: roamPauseTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+      propertyPath: animTransSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1471741602374830, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_Name
       value: Basic Soldier
@@ -74,10 +78,22 @@ PrefabInstance:
     - target: {fileID: 95028430175513588, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2c38d625842885a409614749ca7fc802, type: 2}
+      objectReference: {fileID: 9100000, guid: d677f52cc6bd95a478999760f30cea13, type: 2}
     - target: {fileID: 95028430175513588, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966388671250667300, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966388671250667300, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.055
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966388671250667300, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.204
       objectReference: {fileID: 0}
     - target: {fileID: 9194831141198528255, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_IsTrigger

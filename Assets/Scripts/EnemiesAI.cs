@@ -148,7 +148,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
         {
             agent.SetDestination(gameManager.instance.player.transform.position);
             agent.stoppingDistance = 0;
-            //anim.SetTrigger("Damage");
+            anim.SetTrigger("Damage");
             StartCoroutine(FlashColor());
         }
     }

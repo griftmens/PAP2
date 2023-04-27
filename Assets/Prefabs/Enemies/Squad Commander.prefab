@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8285036862924835081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.954, y: -0.587, z: 0.341}
+  m_LocalPosition: {x: 0.4658, y: -0.0406, z: 0.233}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88,6 +88,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95066877497174294, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d677f52cc6bd95a478999760f30cea13, type: 2}
+    - target: {fileID: 95066877497174294, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -165,11 +173,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 6569270046750740429}
   agent: {fileID: 91317748}
+  anim: {fileID: 6601681343167416685}
   Headpos: {fileID: 6547412631514409279}
   Shootpos: {fileID: 827010349462612869}
   Health: 10
   PlayerFaceSpeed: 10
   SightAngle: 90
+  roamPauseTime: 0
+  roamDistance: 0
+  animTransSpeed: 0
+  drop: {fileID: 0}
   FireRate: 0.4
   ShotDistance: 10
   ShotDamage: 10
@@ -183,5 +196,10 @@ Transform:
 --- !u!137 &6569270046750740429 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 137043864916570038, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+  m_PrefabInstance: {fileID: 6542706501923807355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6601681343167416685 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95066877497174294, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
   m_PrefabInstance: {fileID: 6542706501923807355}
   m_PrefabAsset: {fileID: 0}
