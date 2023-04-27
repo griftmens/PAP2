@@ -33,6 +33,8 @@ public class gameManager : MonoBehaviour
 
     public bool isPaused;
     float timeScaleOg;
+    bool bossDead;
+    Door dScene;
 
     void Awake() // 
     {
@@ -41,6 +43,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<Player>();
         playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
         timeScaleOg = Time.timeScale;
+        bossDead = false;
     }
 
     void Update()
@@ -88,7 +91,7 @@ public class gameManager : MonoBehaviour
         enemiesRemaining += amount;
         enemiesRemainingText.text = enemiesRemaining.ToString("F0");
 
-        if (enemiesRemaining <= 0)
+        if (dScene.GetComponent<Door>().nextScene == 3 && enemiesRemaining <= 0)
         {
             StartCoroutine(PlayerWin());
         }

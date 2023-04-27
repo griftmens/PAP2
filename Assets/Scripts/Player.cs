@@ -148,7 +148,7 @@ public class Player : MonoBehaviour, IDamage
     }
     public void TakeDamage(int Damage)
     {
-        aud.PlayOneShot(audDamage[Random.Range(0, audDamage.Length)], audDamageVol);
+        //aud.PlayOneShot(audDamage[Random.Range(0, audDamage.Length)], audDamageVol);
         hp -= Damage;
         UIUpdate();
         if(hp <= 0)
@@ -171,7 +171,7 @@ public class Player : MonoBehaviour, IDamage
     }
     IEnumerator Shoot()
     {
-        aud.PlayOneShot(gunsInventory[selectedGun].gunShotAud, gunsInventory[selectedGun].gunShotAudVol);
+        //aud.PlayOneShot(gunsInventory[selectedGun].gunShotAud, gunsInventory[selectedGun].gunShotAudVol);
         isShooting = true;
         UpdateAmmoCount(-1);
         RaycastHit hit;
