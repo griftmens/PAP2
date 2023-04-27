@@ -52,15 +52,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.122647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.92160845
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.50992
+      value: 6.94
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -72,11 +72,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -286,15 +286,9 @@ MonoBehaviour:
   ShotDamage: 10
   BulletSpeed: 30
   Bullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
-  audSteps:
-  - {fileID: 8300000, guid: a185a1fd7a141184db25314b580e3b0e, type: 3}
-  - {fileID: 8300000, guid: 27268d80279f5be4395816262c209644, type: 3}
-  - {fileID: 8300000, guid: 9bee2d8b1ae84694ca09a43901e3f53a, type: 3}
-  - {fileID: 8300000, guid: 4933a9c3282459b4588233fe35e2b868, type: 3}
-  audStepsVol: 0.621
   audShoot:
   - {fileID: 8300000, guid: d7f7865a17229844093f4e4aabe78dd3, type: 3}
-  audShootVol: 0.386
+  audShootVol: 0.732
 --- !u!4 &6547412631514409279 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4866435639462212, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
