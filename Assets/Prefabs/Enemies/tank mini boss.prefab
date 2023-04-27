@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 53.96
+      value: 45.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -440,6 +440,33 @@ MonoBehaviour:
   bossShotDamage: 3
   bossBulletSpeed: 3
   bossBullet: {fileID: 0}
+--- !u!135 &1904766742537483097
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081373479013072139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &7789192393581500809
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081373479013072139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &5494462720729437663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1566665873163594363, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
