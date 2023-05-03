@@ -636,7 +636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9168286023850416787, guid: e010024870887a345af8e65aad7034bf, type: 3}
       propertyPath: m_Name
-      value: ShopPad
+      value: LevelPad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e010024870887a345af8e65aad7034bf, type: 3}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ShopPad : MonoBehaviour
+public class LevelPad : MonoBehaviour
 {
     [SerializeField] int levelNum;
 
