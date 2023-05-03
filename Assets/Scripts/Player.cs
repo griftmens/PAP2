@@ -71,6 +71,7 @@ public class Player : MonoBehaviour, IDamage
         staminaOrig = playerStamina;
         //gameManager.instance.HPTotal.text = hp.ToString("F0");
         weAreSprinting = false;
+        RespawnPlayer();
         UIUpdate();
     }
 
