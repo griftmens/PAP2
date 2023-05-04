@@ -10,11 +10,12 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
 
-
     [Header("----- Player -----")]
     public GameObject player;
     public Player playerScript;
     public GameObject playerSpawnPos;
+    public int levelsCleared;
+    public int playerOfferings;
 
     [Header("----- UI Elements / Menus -----")]
     public GameObject activeMenu;
@@ -27,6 +28,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI HPTotal;
     public Image StamBar;
     public TextMeshProUGUI AmmoCount;
+    public TextMeshProUGUI MoneyCount;
     public TextMeshProUGUI enemiesRemainingText;
 
     public int enemiesRemaining;
@@ -44,6 +46,7 @@ public class gameManager : MonoBehaviour
         playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
         timeScaleOg = Time.timeScale;
         bossDead = false;
+        Load();
     }
 
     void Update()
@@ -84,6 +87,19 @@ public class gameManager : MonoBehaviour
 
     public void Quit() {
         Application.Quit();
+    }
+
+    public void Save()
+    {
+        SaveSystem.SavePlayer();
+    }
+
+    public void Load()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        playerScript.money = data.money;
+        levelsCleared = data.levelsCleared;
+        playerOfferings = data.offerings;
     }
 
     public void UpdateGameGoal(int amount)

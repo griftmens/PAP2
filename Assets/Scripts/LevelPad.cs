@@ -9,6 +9,6 @@ public class LevelPad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        SceneManager.LoadScene(levelNum);
     }
 }

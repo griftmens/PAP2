@@ -31,6 +31,7 @@ public class Player : MonoBehaviour, IDamage
     public MeshFilter gunModel;
     public int selectedGun;
     public int ammoCount;
+    public int money;
 
     [Header("----- Stamina -----")]
     [SerializeField] float playerStamina;
@@ -204,6 +205,7 @@ public class Player : MonoBehaviour, IDamage
         //gameManager.instance.HPCurrent.text = hp.ToString("F0");
         gameManager.instance.StamBar.fillAmount = (float) playerStamina / (float)staminaOrig;
         gameManager.instance.AmmoCount.text = ammoCount.ToString("F0");
+        gameManager.instance.MoneyCount.text = money.ToString("F0");
     }
 
     public void RespawnPlayer()
@@ -225,6 +227,12 @@ public class Player : MonoBehaviour, IDamage
         gunModel.sharedMesh = gunStat.model.GetComponentInChildren<MeshFilter>().sharedMesh;
         gunMaterial.sharedMaterial = gunStat.model.GetComponentInChildren<MeshRenderer>().sharedMaterial;
         UpdateAmmoCount(gunStat.ammo);
+    }
+
+    public void PickupMoney(int moneyAmt)
+    {
+        money += moneyAmt;
+        UIUpdate();
     }
 
     public void UpdateAmmoCount(int ammo)
