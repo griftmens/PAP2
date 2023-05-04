@@ -40,7 +40,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1981860918171908, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_Name
-      value: Elite Gaurd (2)
+      value: Elite Gaurd
       objectReference: {fileID: 0}
     - target: {fileID: 1981860918171908, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_Layer
@@ -252,8 +252,8 @@ MonoBehaviour:
   roamPauseTime: 10
   roamDistance: 2
   animTransSpeed: 8
-  drop: {fileID: 1322956167233628721, guid: 3aa666d6481b8c04883f61612c20f284, type: 3}
-  dropChance: 1
+  drop: {fileID: 900889823605866966, guid: eaf42404c729ba94ba0eaeabd63206ae, type: 3}
+  dropChance: 5
   FireRate: 0.2
   ShotDistance: 10
   ShotDamage: 5
