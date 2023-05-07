@@ -177,6 +177,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 409cf99f4d47fce4c896d450f7eeeb49, type: 3}
   - {fileID: 8300000, guid: 2eaadbc7ac6929e4bbd923ed262f915a, type: 3}
   audDamageVol: 0.76
+  money: 0
+  offerings: 0
+  abilities: 1
+  overdriveTime: 3
+  overdriveCooldown: 6
   hpOrig: 0
 --- !u!33 &5504498987805904437
 MeshFilter:

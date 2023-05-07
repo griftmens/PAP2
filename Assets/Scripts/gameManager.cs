@@ -31,6 +31,7 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI AmmoCount;
     public TextMeshProUGUI MoneyCount;
     public TextMeshProUGUI OfferingCount;
+    public Image overdrive;
 
     public int enemiesRemaining;
 

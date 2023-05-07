@@ -52,19 +52,24 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] AudioClip[] audDamage;
     [SerializeField] [Range(0, 1)] float audDamageVol;
 
-    [Header("----- Perm vals -----")]
-    public int money;
-    public int offerings;
+    [Header("----- Acquireables -----")]
+    public int money, offerings, abilities;
+
+    [Header("----- Abilities -----")]
+    [SerializeField] int overdriveTime;
+    [SerializeField] int overdriveCooldown;
+    bool overdriveActive, overdriveWait;
+    float overdriveTimer;
+
 
     #endregion
 
     #region Other Variables
     Vector3 playerVelocity, move;
-    bool groundedPlayer, isShooting;
+    bool groundedPlayer, isShooting, isPlayingSteps;
     int jumpedTimes;
     public int hpOrig;
     float staminaOrig;
-    bool isPlayingSteps;
 
     #endregion
 
@@ -86,6 +91,10 @@ public class Player : MonoBehaviour, IDamage
             SelectGun();
             if (!isShooting && Input.GetButton("Fire1") && ammoCount > 0 && gunsInventory.Count > 0) {
                 StartCoroutine(Shoot());
+            }
+            if(abilities > 0)
+            {
+                Abilities();
             }
         }
     }
@@ -206,7 +215,7 @@ public class Player : MonoBehaviour, IDamage
     {
         gameManager.instance.HPBar.fillAmount = (float)hp / (float)hpOrig;
         //gameManager.instance.HPCurrent.text = hp.ToString("F0");
-        gameManager.instance.StamBar.fillAmount = (float) playerStamina / (float)staminaOrig;
+        gameManager.instance.StamBar.fillAmount = (float)playerStamina / (float)staminaOrig;
         gameManager.instance.AmmoCount.text = ammoCount.ToString("F0");
         gameManager.instance.MoneyCount.text = money.ToString("F0");
         gameManager.instance.OfferingCount.text = offerings.ToString("F0");
@@ -272,5 +281,38 @@ public class Player : MonoBehaviour, IDamage
         shootRate = gunsInventory[selectedGun].shootRate;
         gunModel.mesh = gunsInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
         gunMaterial.material = gunsInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
+    }
+
+    void Abilities()
+    {
+        if(Input.GetKeyDown(KeyCode.F) && !overdriveWait)
+        {
+            StartCoroutine(Overdrive());
+            overdriveTimer = overdriveTime;
+        }
+        if(overdriveActive)
+        {
+            overdriveTimer -= Time.deltaTime;
+            gameManager.instance.overdrive.fillAmount = overdriveTimer / overdriveTime;
+        }
+        else if(overdriveWait)
+        {
+            overdriveTimer += Time.deltaTime;
+            gameManager.instance.overdrive.fillAmount = overdriveTimer / overdriveCooldown;
+        }
+    }
+
+    IEnumerator Overdrive()
+    {
+        overdriveWait = true;
+        overdriveActive = true;
+        playerSpeed *= 2;
+        shootRate *= 2;
+        yield return new WaitForSeconds(overdriveTime);
+        playerSpeed /= 2;
+        shootRate /= 2;
+        overdriveActive = false;
+        yield return new WaitForSeconds(overdriveCooldown);
+        overdriveWait = false;
     }
 }
