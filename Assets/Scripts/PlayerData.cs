@@ -12,7 +12,7 @@ public class PlayerData
     public PlayerData()
     {
         money = gameManager.instance.playerScript.money;
-        offerings = gameManager.instance.playerOfferings;
+        offerings = gameManager.instance.playerScript.offerings;
         levelsCleared = gameManager.instance.levelsCleared;
     }
 }

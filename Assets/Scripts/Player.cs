@@ -31,7 +31,6 @@ public class Player : MonoBehaviour, IDamage
     public MeshFilter gunModel;
     public int selectedGun;
     public int ammoCount;
-    public int money;
 
     [Header("----- Stamina -----")]
     [SerializeField] float playerStamina;
@@ -52,6 +51,10 @@ public class Player : MonoBehaviour, IDamage
 
     [SerializeField] AudioClip[] audDamage;
     [SerializeField] [Range(0, 1)] float audDamageVol;
+
+    [Header("----- Perm vals -----")]
+    public int money;
+    public int offerings;
 
     #endregion
 
@@ -206,6 +209,7 @@ public class Player : MonoBehaviour, IDamage
         gameManager.instance.StamBar.fillAmount = (float) playerStamina / (float)staminaOrig;
         gameManager.instance.AmmoCount.text = ammoCount.ToString("F0");
         gameManager.instance.MoneyCount.text = money.ToString("F0");
+        gameManager.instance.OfferingCount.text = offerings.ToString("F0");
     }
 
     public void RespawnPlayer()
@@ -232,6 +236,12 @@ public class Player : MonoBehaviour, IDamage
     public void PickupMoney(int moneyAmt)
     {
         money += moneyAmt;
+        UIUpdate();
+    }
+
+    public void PickupOffering()
+    {
+        offerings++;
         UIUpdate();
     }
 

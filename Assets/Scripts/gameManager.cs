@@ -27,9 +27,10 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI HPCurrent;
     public TextMeshProUGUI HPTotal;
     public Image StamBar;
+    public TextMeshProUGUI enemiesRemainingText;
     public TextMeshProUGUI AmmoCount;
     public TextMeshProUGUI MoneyCount;
-    public TextMeshProUGUI enemiesRemainingText;
+    public TextMeshProUGUI OfferingCount;
 
     public int enemiesRemaining;
 
@@ -99,7 +100,7 @@ public class gameManager : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
         playerScript.money = data.money;
         levelsCleared = data.levelsCleared;
-        playerOfferings = data.offerings;
+        playerScript.offerings = data.offerings;
     }
 
     public void UpdateGameGoal(int amount)
