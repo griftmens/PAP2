@@ -102,9 +102,12 @@ public class gameManager : MonoBehaviour
     public void Load()
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        playerScript.money = data.money;
-        levelsCleared = data.levelsCleared;
-        playerScript.offerings = data.offerings;
+        if (data != null)
+        {
+            playerScript.money = data.money;
+            levelsCleared = data.levelsCleared;
+            playerScript.offerings = data.offerings;
+        }
     }
 
     public void UpdateGameGoal(int amount)
