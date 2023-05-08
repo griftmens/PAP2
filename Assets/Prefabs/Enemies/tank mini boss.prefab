@@ -13,15 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.49
+      value: 20.281261
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.66
+      value: 0.0000019073486
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.58
+      value: -5.755999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -233,7 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 2aeb6541749c3e04ea84da3f424309ea, type: 2}
     - target: {fileID: 919132149155446097, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
       propertyPath: m_Name
-      value: Tank
+      value: tank mini boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1057821982019848992, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -394,6 +398,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}
   m_PrefabInstance: {fileID: 2738845031559266394}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &1904766742537483097
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081373479013072139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &7789192393581500809
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081373479013072139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &364162879
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -440,33 +471,6 @@ MonoBehaviour:
   bossShotDamage: 3
   bossBulletSpeed: 3
   bossBullet: {fileID: 0}
---- !u!135 &1904766742537483097
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081373479013072139}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 20
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &7789192393581500809
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081373479013072139}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &5494462720729437663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1566665873163594363, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}

@@ -75,6 +75,11 @@ public class Player : MonoBehaviour, IDamage
     bool phaseActive, phaseWait;
     float phaseTimer;
 
+    public int kamikazeTime;
+    [SerializeField] int kamikazeCooldown;
+    bool kamikazeActive, kamikazeWait;
+    float kamikazeTimer;
+
 
     #endregion
 
@@ -177,7 +182,7 @@ public class Player : MonoBehaviour, IDamage
     public void TakeDamage(int Damage)
     {
         //aud.PlayOneShot(audDamage[Random.Range(0, audDamage.Length)], audDamageVol);
-        if (!phaseActive)
+        if (!phaseActive || kamikazeActive)
         {
             hp -= Damage;
             UIUpdate();
