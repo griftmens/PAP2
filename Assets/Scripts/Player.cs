@@ -53,13 +53,22 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] [Range(0, 1)] float audDamageVol;
 
     [Header("----- Acquireables -----")]
-    public int money, offerings, abilities;
+    public int money;
+    public int offerings;
+    public int abilities;
 
     [Header("----- Abilities -----")]
     [SerializeField] int overdriveTime;
     [SerializeField] int overdriveCooldown;
     bool overdriveActive, overdriveWait;
     float overdriveTimer;
+
+    [SerializeField] int absorptionTime;
+    [SerializeField] int absorptionCooldown;
+    [SerializeField] int absorbChance;
+    [SerializeField] int absorbAmount;
+    bool absorptionActive, absorptionWait;
+    float absorptionTimer;
 
 
     #endregion
@@ -285,6 +294,8 @@ public class Player : MonoBehaviour, IDamage
 
     void Abilities()
     {
+        // Overdrive
+
         if(Input.GetKeyDown(KeyCode.F) && !overdriveWait)
         {
             StartCoroutine(Overdrive());
@@ -300,19 +311,64 @@ public class Player : MonoBehaviour, IDamage
             overdriveTimer += Time.deltaTime;
             gameManager.instance.overdrive.fillAmount = overdriveTimer / overdriveCooldown;
         }
+
+        // Absorption
+
+        if (Input.GetKeyDown(KeyCode.E) && !absorptionWait && abilities > 1)
+        {
+            StartCoroutine(Absorption());
+            absorptionTimer = absorptionTime;
+        }
+        if (absorptionActive)
+        {
+            absorptionTimer -= Time.deltaTime;
+            gameManager.instance.absorption.fillAmount = absorptionTimer / absorptionTime;
+        }
+        else if (absorptionWait)
+        {
+            absorptionTimer += Time.deltaTime;
+            gameManager.instance.absorption.fillAmount = absorptionTimer / absorptionCooldown;
+        }
     }
 
     IEnumerator Overdrive()
     {
         overdriveWait = true;
         overdriveActive = true;
+
         playerSpeed *= 2;
-        shootRate *= 2;
+        shootRate /= 2;
         yield return new WaitForSeconds(overdriveTime);
         playerSpeed /= 2;
-        shootRate /= 2;
+        shootRate *= 2;
+
         overdriveActive = false;
         yield return new WaitForSeconds(overdriveCooldown);
         overdriveWait = false;
+    }
+    IEnumerator Absorption()
+    {
+        absorptionWait = true;
+        absorptionActive = true;
+
+        
+        yield return new WaitForSeconds(absorptionTime);
+
+
+        absorptionActive = false;
+        yield return new WaitForSeconds(absorptionCooldown);
+        absorptionWait = false;
+    }
+
+    public void Absorb()
+    {
+        if (absorptionActive)
+        {
+            int rand = Random.Range(0, absorbChance);
+            if (rand == 0)
+            {
+                TakeDamage(-absorbAmount);
+            }
+        }
     }
 }

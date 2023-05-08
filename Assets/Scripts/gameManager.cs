@@ -32,6 +32,10 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI MoneyCount;
     public TextMeshProUGUI OfferingCount;
     public Image overdrive;
+    public Image absorption;
+    public Image kamikaze;
+    public Image laserstrike;
+    public Image phase;
 
     public int enemiesRemaining;
 
@@ -108,6 +112,11 @@ public class gameManager : MonoBehaviour
     {
         enemiesRemaining += amount;
         enemiesRemainingText.text = enemiesRemaining.ToString("F0");
+
+        if(amount == -1)
+        {
+            playerScript.Absorb();
+        }
     }
 
     public void PlayerDead()

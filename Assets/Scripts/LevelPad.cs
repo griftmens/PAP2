@@ -9,6 +9,7 @@ public class LevelPad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(levelNum);
+        if(other.CompareTag("Player"))
+            SceneManager.LoadScene(levelNum);
     }
 }

@@ -6,7 +6,10 @@ public class OfferingPickup : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.instance.playerScript.PickupOffering();
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            gameManager.instance.playerScript.PickupOffering();
+            Destroy(gameObject);
+        }
     }
 }

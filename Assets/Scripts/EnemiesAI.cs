@@ -146,8 +146,8 @@ public class EnemiesAI : MonoBehaviour, IDamage
             StopAllCoroutines();
             if (drop)
             {
-                int rand = Random.Range(1, dropChance);
-                if(rand == 1)
+                int rand = Random.Range(0, dropChance);
+                if(rand == 0)
                     Instantiate(drop, transform.position, drop.transform.rotation);
             }
             gameManager.instance.UpdateGameGoal(-1);
