@@ -179,13 +179,15 @@ MonoBehaviour:
   audDamageVol: 0.76
   money: 0
   offerings: 0
-  abilities: 2
+  abilities: 5
   overdriveTime: 3
   overdriveCooldown: 6
   absorptionTime: 10
   absorptionCooldown: 20
   absorbChance: 3
   absorbAmount: 1
+  phaseTime: 3
+  phaseCooldown: 20
   hpOrig: 0
 --- !u!33 &5504498987805904437
 MeshFilter:

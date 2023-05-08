@@ -36,12 +36,12 @@ public class gameManager : MonoBehaviour
     public Image kamikaze;
     public Image laserstrike;
     public Image phase;
+    public GameObject phaseUI;
 
     public int enemiesRemaining;
 
     public bool isPaused;
     float timeScaleOg;
-    bool bossDead;
     Door dScene;
 
     void Awake() // 
@@ -51,7 +51,6 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<Player>();
         playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
         timeScaleOg = Time.timeScale;
-        bossDead = false;
         Load();
     }
 
@@ -136,6 +135,18 @@ public class gameManager : MonoBehaviour
         activeMenu = winMenu;
         activeMenu.SetActive(true);
         Pause();
+    }
+
+    public void StartPhase()
+    {
+        StartCoroutine(PlayerPhase());
+    }
+
+    IEnumerator PlayerPhase()
+    {
+        phaseUI.SetActive(true);
+        yield return new WaitForSeconds(playerScript.phaseTime);
+        phaseUI.SetActive(false);
     }
 
 }

@@ -70,6 +70,11 @@ public class Player : MonoBehaviour, IDamage
     bool absorptionActive, absorptionWait;
     float absorptionTimer;
 
+    public int phaseTime;
+    [SerializeField] int phaseCooldown;
+    bool phaseActive, phaseWait;
+    float phaseTimer;
+
 
     #endregion
 
@@ -172,11 +177,14 @@ public class Player : MonoBehaviour, IDamage
     public void TakeDamage(int Damage)
     {
         //aud.PlayOneShot(audDamage[Random.Range(0, audDamage.Length)], audDamageVol);
-        hp -= Damage;
-        UIUpdate();
-        if(hp <= 0)
+        if (!phaseActive)
         {
-            gameManager.instance.PlayerDead();
+            hp -= Damage;
+            UIUpdate();
+            if (hp <= 0)
+            {
+                gameManager.instance.PlayerDead();
+            }
         }
     }
     IEnumerator Tired()
@@ -329,6 +337,24 @@ public class Player : MonoBehaviour, IDamage
             absorptionTimer += Time.deltaTime;
             gameManager.instance.absorption.fillAmount = absorptionTimer / absorptionCooldown;
         }
+
+        // Phase
+
+        if (Input.GetKeyDown(KeyCode.X) && !phaseWait && abilities > 4)
+        {
+            StartCoroutine(Phase());
+            phaseTimer = phaseTime;
+        }
+        if (phaseActive)
+        {
+            phaseTimer -= Time.deltaTime;
+            gameManager.instance.phase.fillAmount = phaseTimer / phaseTime;
+        }
+        else if (phaseWait)
+        {
+            phaseTimer += Time.deltaTime;
+            gameManager.instance.phase.fillAmount = phaseTimer / phaseCooldown;
+        }
     }
 
     IEnumerator Overdrive()
@@ -370,5 +396,18 @@ public class Player : MonoBehaviour, IDamage
                 TakeDamage(-absorbAmount);
             }
         }
+    }
+    IEnumerator Phase()
+    {
+        phaseWait = true;
+        phaseActive = true;
+
+        gameManager.instance.StartPhase();
+        yield return new WaitForSeconds(phaseTime);
+
+
+        phaseActive = false;
+        yield return new WaitForSeconds(phaseCooldown);
+        phaseWait = false;
     }
 }
