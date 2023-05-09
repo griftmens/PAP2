@@ -75,10 +75,10 @@ public class Player : MonoBehaviour, IDamage
     bool phaseActive, phaseWait;
     float phaseTimer;
 
-    public int kamikazeTime;
+    [SerializeField] int kamikazeChargeTime;
     [SerializeField] int kamikazeCooldown;
-    bool kamikazeActive, kamikazeWait;
-    float kamikazeTimer;
+    bool kamikazeCharging, kamikazeWait, kamikazeCharged;
+    float kamikazeChargeTimer, kamikazeCooldownTimer;
 
 
     #endregion
@@ -182,7 +182,7 @@ public class Player : MonoBehaviour, IDamage
     public void TakeDamage(int Damage)
     {
         //aud.PlayOneShot(audDamage[Random.Range(0, audDamage.Length)], audDamageVol);
-        if (!phaseActive || kamikazeActive)
+        if (!phaseActive)
         {
             hp -= Damage;
             UIUpdate();
@@ -309,7 +309,7 @@ public class Player : MonoBehaviour, IDamage
     {
         // Overdrive
 
-        if(Input.GetKeyDown(KeyCode.F) && !overdriveWait)
+        if(Input.GetKeyDown(KeyCode.E) && !overdriveWait && !phaseActive)
         {
             StartCoroutine(Overdrive());
             overdriveTimer = overdriveTime;
@@ -327,7 +327,7 @@ public class Player : MonoBehaviour, IDamage
 
         // Absorption
 
-        if (Input.GetKeyDown(KeyCode.E) && !absorptionWait && abilities > 1)
+        if (Input.GetKeyDown(KeyCode.Q) && !absorptionWait && abilities > 1 && !phaseActive)
         {
             StartCoroutine(Absorption());
             absorptionTimer = absorptionTime;
@@ -341,6 +341,53 @@ public class Player : MonoBehaviour, IDamage
         {
             absorptionTimer += Time.deltaTime;
             gameManager.instance.absorption.fillAmount = absorptionTimer / absorptionCooldown;
+        }
+
+        // Kamikaze
+
+        if(Input.GetKeyDown(KeyCode.F) && !kamikazeWait && abilities > 2 && !phaseActive)
+        {
+            kamikazeCharging = true;
+        }
+        if(kamikazeCharging)
+        {
+            if (kamikazeChargeTimer < kamikazeChargeTime)
+            {
+                kamikazeChargeTimer += Time.deltaTime;
+                gameManager.instance.kamikazeChargeBar.fillAmount = kamikazeChargeTimer / kamikazeChargeTime;
+            }
+            else
+            {
+                gameManager.instance.kamikazeChargeBar.color = Color.green;
+                kamikazeCharging = false;
+                kamikazeCharged = true;
+            }
+        }
+        else if (kamikazeChargeTimer > 0 && !kamikazeCharged && !kamikazeWait)
+        {
+            kamikazeChargeTimer -= Time.deltaTime;
+            gameManager.instance.kamikazeChargeBar.fillAmount = kamikazeChargeTimer / kamikazeChargeTime;
+        }
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            if(kamikazeCharged)
+            {
+                kamikazeCharged = false;
+                kamikazeChargeTimer = 0;
+                gameManager.instance.kamikazeChargeBar.fillAmount = kamikazeChargeTimer / kamikazeChargeTime;
+                kamikazeCooldownTimer = 0;
+                gameManager.instance.kamikazeChargeBar.color = Color.red;
+                StartCoroutine(Kamikaze());
+            }
+            else if(kamikazeCharging)
+            {
+                kamikazeCharging = false;
+            }
+        }
+        if(kamikazeWait)
+        {
+            kamikazeCooldownTimer += Time.deltaTime;
+            gameManager.instance.kamikaze.fillAmount = kamikazeCooldownTimer / kamikazeCooldown;
         }
 
         // Phase
@@ -382,9 +429,7 @@ public class Player : MonoBehaviour, IDamage
         absorptionWait = true;
         absorptionActive = true;
 
-        
         yield return new WaitForSeconds(absorptionTime);
-
 
         absorptionActive = false;
         yield return new WaitForSeconds(absorptionCooldown);
@@ -402,6 +447,15 @@ public class Player : MonoBehaviour, IDamage
             }
         }
     }
+
+    IEnumerator Kamikaze()
+    {
+        kamikazeWait = true;
+        //explosion function call?
+        yield return new WaitForSeconds(kamikazeCooldown);
+        kamikazeWait = false;
+    }
+
     IEnumerator Phase()
     {
         phaseWait = true;
@@ -409,7 +463,6 @@ public class Player : MonoBehaviour, IDamage
 
         gameManager.instance.StartPhase();
         yield return new WaitForSeconds(phaseTime);
-
 
         phaseActive = false;
         yield return new WaitForSeconds(phaseCooldown);

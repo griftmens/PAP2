@@ -34,6 +34,7 @@ public class gameManager : MonoBehaviour
     public Image overdrive;
     public Image absorption;
     public Image kamikaze;
+    public Image kamikazeChargeBar;
     public Image laserstrike;
     public Image phase;
     public GameObject phaseUI;

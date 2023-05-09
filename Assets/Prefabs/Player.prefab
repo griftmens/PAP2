@@ -188,6 +188,8 @@ MonoBehaviour:
   absorbAmount: 1
   phaseTime: 3
   phaseCooldown: 20
+  kamikazeChargeTime: 1
+  kamikazeCooldown: 3
   hpOrig: 0
 --- !u!33 &5504498987805904437
 MeshFilter:
