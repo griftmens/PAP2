@@ -22,6 +22,7 @@ public class gameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject winMenu;
     public GameObject loseMenu;
+    public GameObject optionMenu;
     public GameObject checkpointMenu;
     public Image HPBar;
     public TextMeshProUGUI HPCurrent;
@@ -52,6 +53,7 @@ public class gameManager : MonoBehaviour
         playerScript = player.GetComponent<Player>();
         playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
         timeScaleOg = Time.timeScale;
+        optionMenu.SetActive(false);
         Load();
     }
 
@@ -91,8 +93,11 @@ public class gameManager : MonoBehaviour
         Resume();
     }
 
-    public void Quit() {
-        Application.Quit();
+    public void QuitGame(){
+        foreach (GameObject o in Object.FindObjectsOfType<GameObject>()) {
+             Destroy(o);
+        }
+        SceneManager.LoadScene(0);
     }
 
     public void Save()
@@ -153,4 +158,21 @@ public class gameManager : MonoBehaviour
         phaseUI.SetActive(false);
     }
 
+    public void Option(){
+        activeMenu.SetActive(false);
+        optionMenu.SetActive(true);
+    }
+
+    public void Back(){
+        optionMenu.SetActive(false);
+        activeMenu.SetActive(true);
+    }
+
+    // public void Start(){
+    //     SceneManager.LoadScene(1);
+    // }
+
+    // public void Quit() {
+    //     Application.Quit();
+    // }
 }
