@@ -190,6 +190,7 @@ MonoBehaviour:
   phaseCooldown: 20
   kamikazeChargeTime: 1
   kamikazeCooldown: 3
+  Explosion: {fileID: 4240381697448314644, guid: 3802529cb6fa00449a4ab4feb61adaf6, type: 3}
   hpOrig: 0
 --- !u!33 &5504498987805904437
 MeshFilter:

@@ -79,6 +79,7 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] int kamikazeCooldown;
     bool kamikazeCharging, kamikazeWait, kamikazeCharged;
     float kamikazeChargeTimer, kamikazeCooldownTimer;
+    [SerializeField] GameObject Explosion;
 
 
     #endregion
@@ -451,7 +452,7 @@ public class Player : MonoBehaviour, IDamage
     IEnumerator Kamikaze()
     {
         kamikazeWait = true;
-        //explosion function call?
+        GameObject explosion = Instantiate(Explosion, transform.position, new Quaternion());
         yield return new WaitForSeconds(kamikazeCooldown);
         kamikazeWait = false;
     }
