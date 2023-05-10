@@ -42,6 +42,7 @@ public class gameManager : MonoBehaviour
     public GameObject phaseUI;
     public AudioSource musicGame;
     public AudioMixer musicMixer;
+    public AudioMixer sfxMixer;
 
     public int enemiesRemaining;
 
@@ -173,5 +174,9 @@ public class gameManager : MonoBehaviour
 
     public void ControlMusicGame(float sliderMusicG){
         musicMixer.SetFloat("GameMusicVol", Mathf.Log10(sliderMusicG) * 20);
+    }
+
+    public void ControlSFXGame(float sliderSFX){
+        sfxMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFX) * 20);
     }
 }

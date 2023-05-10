@@ -14,6 +14,7 @@ public class SceneM : MonoBehaviour
     public AudioSource musicMain;
     public AudioSource sfxMain;
     public AudioMixer audioMixer;
+    public AudioMixer sfxMixer;
 
      public void StartG(){
         SceneManager.LoadScene(1);
@@ -29,9 +30,9 @@ public class SceneM : MonoBehaviour
         creditsMain.SetActive(false);
         uiMain.SetActive(true);
 
-        if(Input.GetKey(KeyCode.Delete) && (optionMain == true || creditsMain == true)){
-            uiMain.SetActive(true);
-        }
+        // if(Input.GetKey(KeyCode.Delete) && (optionMain == true || creditsMain == true)){
+        //     uiMain.SetActive(true);
+        // }
     }
 
     public void CreditsG(){
