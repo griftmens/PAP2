@@ -25,10 +25,11 @@ public class SceneM : MonoBehaviour
     // public Button btnOptions;
 
     private void Awake(){
-        volumeSFX.onValueChanged.AddListener(ControlSFX);
+        //volumeSFX.onValueChanged.AddListener(ControlSFX);
     }
 
      public void StartG(){
+        Time.timeScale = 1;
         // gameObject.AddComponent<AudioSource>();
         // btnStart.onClick.AddListener(PlaySound);
         PlaySound();
