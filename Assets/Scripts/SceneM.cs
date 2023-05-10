@@ -15,24 +15,35 @@ public class SceneM : MonoBehaviour
     public AudioSource sfxMain;
     public AudioMixer audioMixer;
     public AudioMixer sfxMixer;
+    public AudioClip clickSound;
+
+    public Slider volumeSFX;
+    public Slider volumeMusic;
     // public AudioSource source {get {return GetComponent<AudioSource>();}}
     // public Button btnStart{get {return GetComponent<Button>();}}
     // public AudioClip clip;
     // public Button btnOptions;
 
+    private void Awake(){
+        volumeSFX.onValueChanged.AddListener(ControlSFX);
+    }
+
      public void StartG(){
         // gameObject.AddComponent<AudioSource>();
         // btnStart.onClick.AddListener(PlaySound);
+        PlaySound();
         SceneManager.LoadScene(1);
     }
 
     public void OptionsG(){
         uiMain.SetActive(false);
         optionMain.SetActive(true);
+        PlaySound();
         //btnOptions.onClick.AddListener(PlaySound);
     }
 
     public void BackG(){
+        PlaySound();
         optionMain.SetActive(false);
         creditsMain.SetActive(false);
         uiMain.SetActive(true);
@@ -43,11 +54,13 @@ public class SceneM : MonoBehaviour
     }
 
     public void CreditsG(){
+        PlaySound();
         uiMain.SetActive(false);
         creditsMain.SetActive(true);
     }
 
     public void QuitG() {
+        PlaySound();
         Application.Quit();
     }
 
@@ -56,15 +69,14 @@ public class SceneM : MonoBehaviour
     }
 
     public void ControlSFX(float sliderSFXM){
-        audioMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFXM) * 20);
+        audioMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFXM));
     }
 
     public void OpenShowCase(){
         SceneManager.LoadScene(4);
     }
 
-    // public void PlaySound(){
-    //     source.PlayOneShot(clip);
-    //     //GetComponent<AudioSource>().Play();
-    // }
+    public void PlaySound(){
+        sfxMain.PlayOneShot(clickSound);
+    }
 }

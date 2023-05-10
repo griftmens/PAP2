@@ -44,6 +44,9 @@ public class gameManager : MonoBehaviour
     public AudioMixer musicMixer;
     public AudioMixer sfxMixer;
 
+    public AudioSource sfxGame;
+    public AudioClip clickSoungG;
+
     public int enemiesRemaining;
 
     public bool isPaused;
@@ -85,6 +88,7 @@ public class gameManager : MonoBehaviour
 
     public void Resume()
     {
+        PlaySound();
         Time.timeScale = timeScaleOg;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -94,6 +98,7 @@ public class gameManager : MonoBehaviour
     }
 
     public void Restart() {
+        PlaySound();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Resume();
     }
@@ -103,12 +108,14 @@ public class gameManager : MonoBehaviour
         //      Destroy(o);
         // }
         //GetComponent<AudioSource>().Play();
+        PlaySound();
         SceneManager.LoadScene(0);
     }
 
     public void Save()
     {
         //GetComponent<AudioSource>().Play();
+        PlaySound();
         SaveSystem.SavePlayer();
     }
 
@@ -166,11 +173,13 @@ public class gameManager : MonoBehaviour
     }
 
     public void Option(){
+        PlaySound();
         activeMenu.SetActive(false);
         optionMenu.SetActive(true);
     }
 
     public void Back(){
+        PlaySound();
         optionMenu.SetActive(false);
         activeMenu.SetActive(true);
     }
@@ -181,5 +190,9 @@ public class gameManager : MonoBehaviour
 
     public void ControlSFXGame(float sliderSFX){
         sfxMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFX) * 20);
+    }
+
+    public void PlaySound(){
+        sfxGame.PlayOneShot(clickSoungG);
     }
 }
