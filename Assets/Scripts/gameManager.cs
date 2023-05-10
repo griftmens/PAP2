@@ -88,7 +88,7 @@ public class gameManager : MonoBehaviour
         Time.timeScale = timeScaleOg;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         activeMenu.SetActive(false);
         activeMenu = null;
     }
@@ -102,13 +102,13 @@ public class gameManager : MonoBehaviour
         // foreach (GameObject o in Object.FindObjectsOfType<GameObject>()) {
         //      Destroy(o);
         // }
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         SceneManager.LoadScene(0);
     }
 
     public void Save()
     {
-        GetComponent<AudioSource>().Play();
+        //GetComponent<AudioSource>().Play();
         SaveSystem.SavePlayer();
     }
 

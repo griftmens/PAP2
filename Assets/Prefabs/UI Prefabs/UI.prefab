@@ -3837,7 +3837,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8839840778374569869}
         m_TargetAssemblyTypeName: gameManager, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5769,7 +5769,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8839840778374569869}
         m_TargetAssemblyTypeName: gameManager, Assembly-CSharp
-        m_MethodName: Quit
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
