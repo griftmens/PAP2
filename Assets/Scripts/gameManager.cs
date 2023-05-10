@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEditor;
+using UnityEngine.Audio;
 
 public class gameManager : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class gameManager : MonoBehaviour
     public Image laserstrike;
     public Image phase;
     public GameObject phaseUI;
+    public AudioSource musicGame;
+    public AudioMixer musicMixer;
 
     public int enemiesRemaining;
 
@@ -168,11 +171,7 @@ public class gameManager : MonoBehaviour
         activeMenu.SetActive(true);
     }
 
-    // public void Start(){
-    //     SceneManager.LoadScene(1);
-    // }
-
-    // public void Quit() {
-    //     Application.Quit();
-    // }
+    public void ControlMusicGame(float sliderMusicG){
+        musicMixer.SetFloat("GameMusicVol", Mathf.Log10(sliderMusicG) * 20);
+    }
 }
