@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
-public class EnemiesAI : MonoBehaviour, IDamage
+public class KamikazeAI : MonoBehaviour
 {
     [Header("-----Components-----")]
     [SerializeField] Renderer model;
@@ -16,6 +17,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
     [Header("-----Stats-----")]
     [SerializeField] int Health;
     [SerializeField] int PlayerFaceSpeed;
+    [SerializeField] int Damage;
     [SerializeField] int SightAngle;
     [SerializeField] int roamPauseTime;
     [SerializeField] int roamDistance;
@@ -23,19 +25,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
     [SerializeField] GameObject drop;
     [SerializeField] int dropChance;
 
-    [Header("-----Gun Stats-----")]
-    [Range((float).1, 1)][SerializeField] float FireRate;
-    [Range(1,10)][SerializeField] int ShotDistance;
-    [Range(1, 100)][SerializeField] int ShotDamage;
-    [SerializeField] float BulletSpeed;
-    [SerializeField] GameObject Bullet;
-
-    [Header("----- Audio -----")]
-    [SerializeField] AudioClip[] audShoot;
-    [SerializeField] [Range(0, 1)] float audShootVol;
-
     bool PlayerinRange;
-    bool IsShooting;
     Vector3 PlayerDirection;
     float AngleToPlayer;
     float StopDistance;
@@ -43,7 +33,6 @@ public class EnemiesAI : MonoBehaviour, IDamage
     Vector3 startingPos;
 
     float speed;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -55,7 +44,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        if(agent.isActiveAndEnabled)
+        if (agent.isActiveAndEnabled)
         {
             speed = Mathf.Lerp(speed, agent.velocity.normalized.magnitude, Time.deltaTime * 3);
             anim.SetFloat("Speed", agent.velocity.normalized.magnitude);
@@ -67,10 +56,9 @@ public class EnemiesAI : MonoBehaviour, IDamage
                 StartCoroutine(Roam());
         }
     }
-
     IEnumerator Roam()
     {
-        if(!destinationChosen && agent.remainingDistance < 0.05)
+        if (!destinationChosen && agent.remainingDistance < 0.05)
         {
             destinationChosen = true;
             agent.stoppingDistance = 0;
@@ -86,7 +74,6 @@ public class EnemiesAI : MonoBehaviour, IDamage
             destinationChosen = false;
         }
     }
-
     bool CanSee()
     {
         PlayerDirection = (gameManager.instance.player.transform.position - Headpos.position);
@@ -96,33 +83,18 @@ public class EnemiesAI : MonoBehaviour, IDamage
         RaycastHit hit;
         if (Physics.Raycast(Headpos.position, PlayerDirection, out hit))
         {
-            if(hit.collider.CompareTag("Player") && AngleToPlayer <= SightAngle)
+            if (hit.collider.CompareTag("Player") && AngleToPlayer <= SightAngle)
             {
                 agent.stoppingDistance = StopDistance;
                 agent.SetDestination(gameManager.instance.player.transform.position);
-                if(agent.remainingDistance <= agent.stoppingDistance)
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
                     FacePlayer();
                 }
-                if (!IsShooting)
-                {
-                    StartCoroutine(Shoot());
-                }
                 return true;
-         
             }
         }
         return false;
-    }
-    IEnumerator Shoot()
-    {
-        aud.PlayOneShot(audShoot[Random.Range(0, audShoot.Length)], audShootVol);
-        IsShooting = true;
-        anim.SetTrigger("Shoot");
-        GameObject bullet = Instantiate(Bullet, Shootpos.position, Bullet.transform.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = PlayerDirection.normalized * BulletSpeed;
-        yield return new WaitForSeconds(FireRate);
-        IsShooting= false;
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -135,20 +107,20 @@ public class EnemiesAI : MonoBehaviour, IDamage
     {
         if (other.CompareTag("Player"))
         {
-            PlayerinRange= false;
+            PlayerinRange = false;
             agent.stoppingDistance = 0;
         }
     }
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        if(Health <= 0)
+        if (Health <= 0)
         {
             StopAllCoroutines();
             if (drop)
             {
                 int rand = Random.Range(0, dropChance);
-                if(rand == 0)
+                if (rand == 0)
                     Instantiate(drop, transform.position, drop.transform.rotation);
             }
             gameManager.instance.UpdateGameGoal(-1);
