@@ -15,14 +15,21 @@ public class SceneM : MonoBehaviour
     public AudioSource sfxMain;
     public AudioMixer audioMixer;
     public AudioMixer sfxMixer;
+    public AudioSource source {get {return GetComponent<AudioSource>();}}
+    public Button btnStart{get {return GetComponent<Button>();}}
+    public AudioClip clip;
+    public Button btnOptions;
 
      public void StartG(){
+        gameObject.AddComponent<AudioSource>();
+        btnStart.onClick.AddListener(PlaySound);
         SceneManager.LoadScene(1);
     }
 
     public void OptionsG(){
         uiMain.SetActive(false);
         optionMain.SetActive(true);
+        btnOptions.onClick.AddListener(PlaySound);
     }
 
     public void BackG(){
@@ -54,5 +61,10 @@ public class SceneM : MonoBehaviour
 
     public void OpenShowCase(){
         SceneManager.LoadScene(4);
+    }
+
+    public void PlaySound(){
+        source.PlayOneShot(clip);
+        //GetComponent<AudioSource>().Play();
     }
 }
