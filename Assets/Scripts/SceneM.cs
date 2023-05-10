@@ -10,6 +10,7 @@ public class SceneM : MonoBehaviour
     public GameObject uiMain;
     public GameObject optionMain;
     public GameObject creditsMain;
+    public GameObject showCase;
     public AudioSource musicMain;
     public AudioSource sfxMain;
     public AudioMixer audioMixer;
@@ -48,5 +49,9 @@ public class SceneM : MonoBehaviour
 
     public void ControlSFX(float sliderSFXM){
         audioMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFXM) * 20);
+    }
+
+    public void OpenShowCase(){
+        SceneManager.LoadScene(4);
     }
 }
