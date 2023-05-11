@@ -24,7 +24,7 @@ public class gameManager : MonoBehaviour
     public GameObject winMenu;
     public GameObject loseMenu;
     public GameObject optionMenu;
-    public GameObject checkpointMenu;
+    public GameObject shopMenu;
     public Image HPBar;
     public TextMeshProUGUI HPCurrent;
     public TextMeshProUGUI HPTotal;
@@ -49,6 +49,11 @@ public class gameManager : MonoBehaviour
     public AudioClip clickSoungG;
 
     public int enemiesRemaining;
+
+    [Header("----- Weapons -----")]
+    [SerializeField] GameObject GunLight;
+    [SerializeField] GameObject GunMedium;
+    [SerializeField] GameObject GunHeavy;
 
     public bool isPaused;
     float timeScaleOg;
@@ -80,6 +85,24 @@ public class gameManager : MonoBehaviour
         }
     }
 
+    public void SpawnGunMed()
+    {
+        Instantiate(GunMedium, playerScript.transform);
+        playerScript.money -= 10;
+    }
+    public void SpawnGunHeavy()
+    {
+        Instantiate(GunHeavy, playerScript.transform);
+        playerScript.money -= 20;
+    }
+
+    public void Shop()
+    {
+        activeMenu = shopMenu;
+        activeMenu.SetActive(true);
+        Pause();
+    }
+
     public void Pause()
     {
         Time.timeScale = 0;
@@ -100,6 +123,7 @@ public class gameManager : MonoBehaviour
 
     public void Restart() {
         PlaySound();
+        Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Resume();
     }
@@ -137,16 +161,13 @@ public class gameManager : MonoBehaviour
             playerScript.money = data.money;
             levelsCleared = data.levelsCleared;
             playerScript.offerings = data.offerings;
-            if(data.guns > 0) // guns that are purchased will be saved
+            Instantiate(GunLight, playerSpawnPos.transform);
+            if (data.guns > 1)
             {
-                //gameManager.instance.playerScript.gunsInventory.Add();
-                if(data.guns > 1)
+                Instantiate(GunMedium, playerSpawnPos.transform);
+                if (data.guns > 2)
                 {
-                    //gameManager.instance.playerScript.gunsInventory.Add();
-                    if (data.guns > 2)
-                    {
-                        //gameManager.instance.playerScript.gunsInventory.Add();
-                    }
+                    Instantiate(GunHeavy, playerSpawnPos.transform);
                 }
             }
         }
