@@ -6,7 +6,7 @@ public class Explosion : MonoBehaviour
 {
     [SerializeField] int explosionDamage;
     [SerializeField] int explosionRange;
-    [SerializeField, Range(1,3)] float explosionSpeed;
+    [SerializeField, Range(1, 3)] float explosionSpeed;
 
     bool hit;
 
@@ -25,19 +25,24 @@ public class Explosion : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        IDamage Damageable = other.GetComponent<IDamage>();
-        if (Damageable != null)
+        if (!other.CompareTag("Player"))
         {
-            if(other.CompareTag("Player"))
+            Destroy(gameObject);
+            IDamage damageable = other.GetComponent<IDamage>();
+            if (damageable != null)
             {
-                if (!hit)
-                {
-                    hit = true;
-                    Damageable.TakeDamage(explosionDamage);
-                }
+                //if(other.CompareTag("Player"))
+                //{
+                //    if (!hit)
+                //    {
+                //        hit = true;
+                //        Damageable.TakeDamage(explosionDamage);
+                //    }
+                //}
+                //else
+                //    Damageable.TakeDamage(explosionDamage);
+                damageable.TakeDamage(explosionDamage);
             }
-            else
-                Damageable.TakeDamage(explosionDamage);
         }
     }
 }

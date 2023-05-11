@@ -18,4 +18,4 @@ MonoBehaviour:
   model: {fileID: 131900, guid: 1d8e61deede12df46b37e582ad640c5c, type: 3}
   gunShotAud: {fileID: 8300000, guid: 21c89c4ccbe674e46b935f88baba25ca, type: 3}
   gunShotAudVol: 0.81
-  ammo: 20
+  ammoConsumption: 2

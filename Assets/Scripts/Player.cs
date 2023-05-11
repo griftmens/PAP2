@@ -25,12 +25,17 @@ public class Player : MonoBehaviour, IDamage
     [Header("----- Gun Stats -----")]
     public List<GunStats> gunsInventory = new List<GunStats>();
     [SerializeField] float shootRate;
+    [SerializeField] float rateLast;
+    [SerializeField] float rateTimer;
     [SerializeField] int shootRange;
     [SerializeField] int shootDamage;
+    [SerializeField] int shootEnergy;
     public MeshRenderer gunMaterial;
     public MeshFilter gunModel;
     public int selectedGun;
-    public int ammoCount;
+    [SerializeField] float ammoCount;
+    [SerializeField] int ammoMax;
+    [SerializeField] float reloadTime;
 
     [Header("----- Stamina -----")]
     [SerializeField] float playerStamina;
@@ -86,7 +91,7 @@ public class Player : MonoBehaviour, IDamage
 
     #region Other Variables
     Vector3 playerVelocity, move;
-    bool groundedPlayer, isShooting, isPlayingSteps;
+    bool groundedPlayer, isShooting, isPlayingSteps, isReloading;
     int jumpedTimes;
     public int hpOrig;
     float staminaOrig;
@@ -98,7 +103,7 @@ public class Player : MonoBehaviour, IDamage
         hpOrig = hp;
         playerStamina = maxStamina;
         staminaOrig = playerStamina;
-        //gameManager.instance.HPTotal.text = hp.ToString("F0");
+        ammoCount = ammoMax;
         weAreSprinting = false;
         RespawnPlayer();
         UIUpdate();
@@ -109,12 +114,20 @@ public class Player : MonoBehaviour, IDamage
         if (gameManager.instance.activeMenu == null) {
             Movemente();
             SelectGun();
-            if (!isShooting && Input.GetButton("Fire1") && ammoCount > 0 && gunsInventory.Count > 0) {
+            if (!isShooting && !isReloading && Input.GetButton("Fire1") && gunsInventory.Count > 0) {
                 StartCoroutine(Shoot());
+            }
+            else if (isShooting)
+            {
+                FireRateUI();
             }
             if(abilities > 0)
             {
                 Abilities();
+            }
+            if(isReloading)
+            {
+                Reload();
             }
         }
     }
@@ -210,7 +223,7 @@ public class Player : MonoBehaviour, IDamage
     {
         //aud.PlayOneShot(gunsInventory[selectedGun].gunShotAud, gunsInventory[selectedGun].gunShotAudVol);
         isShooting = true;
-        UpdateAmmoCount(-1);
+        UpdateAmmoCount(-shootEnergy);
         RaycastHit hit;
         if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootRange))
         {
@@ -220,6 +233,8 @@ public class Player : MonoBehaviour, IDamage
                 damageable.TakeDamage(shootDamage);
             }
         }
+        rateLast = shootRate;
+        rateTimer = shootRate;
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
@@ -234,12 +249,30 @@ public class Player : MonoBehaviour, IDamage
         playerStamina += staminaRegen * Time.deltaTime;
         UIUpdate();
     }
+
+    void Reload()
+    {
+        ammoCount += (ammoMax / reloadTime) * Time.deltaTime;
+        if(ammoCount >= ammoMax)
+        {
+            isReloading = false;
+        }
+        UIUpdate();
+    }
+
+    void FireRateUI()
+    {
+        rateTimer -= Time.deltaTime;
+        UIUpdate();
+    }
+
     void UIUpdate()
     {
         gameManager.instance.HPBar.fillAmount = (float)hp / (float)hpOrig;
         //gameManager.instance.HPCurrent.text = hp.ToString("F0");
         gameManager.instance.StamBar.fillAmount = (float)playerStamina / (float)staminaOrig;
-        gameManager.instance.AmmoCount.text = ammoCount.ToString("F0");
+        gameManager.instance.ammoBar.fillAmount = (float)ammoCount / (float)ammoMax;
+        gameManager.instance.firerateBar.fillAmount = rateTimer / rateLast;
         gameManager.instance.MoneyCount.text = money.ToString("F0");
         gameManager.instance.OfferingCount.text = offerings.ToString("F0");
     }
@@ -259,10 +292,10 @@ public class Player : MonoBehaviour, IDamage
         shootDamage = gunStat.shootDamage;
         shootRange = gunStat.shootRange;
         shootRate = gunStat.shootRate;
+        shootEnergy = gunStat.ammoConsumption;
 
         gunModel.sharedMesh = gunStat.model.GetComponentInChildren<MeshFilter>().sharedMesh;
         gunMaterial.sharedMaterial = gunStat.model.GetComponentInChildren<MeshRenderer>().sharedMaterial;
-        UpdateAmmoCount(gunStat.ammo);
     }
 
     public void PickupMoney(int moneyAmt)
@@ -280,6 +313,10 @@ public class Player : MonoBehaviour, IDamage
     public void UpdateAmmoCount(int ammo)
     {
         ammoCount += ammo;
+        if(ammoCount <= 0.01f)
+        {
+            isReloading = true;
+        }
         UIUpdate();
     }
 
@@ -302,6 +339,7 @@ public class Player : MonoBehaviour, IDamage
         shootDamage = gunsInventory[selectedGun].shootDamage;
         shootRange = gunsInventory[selectedGun].shootRange;
         shootRate = gunsInventory[selectedGun].shootRate;
+        shootEnergy = gunsInventory[selectedGun].ammoConsumption;
         gunModel.mesh = gunsInventory[selectedGun].model.GetComponent<MeshFilter>().sharedMesh;
         gunMaterial.material = gunsInventory[selectedGun].model.GetComponent<MeshRenderer>().sharedMaterial;
     }

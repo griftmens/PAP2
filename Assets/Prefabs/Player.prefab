@@ -143,12 +143,17 @@ MonoBehaviour:
   jumpHeight: 10
   gunsInventory: []
   shootRate: 0
+  rateLast: 0
+  rateTimer: 0
   shootRange: 0
   shootDamage: 0
+  shootEnergy: 0
   gunMaterial: {fileID: 1975337211}
   gunModel: {fileID: 1974207035}
   selectedGun: 0
   ammoCount: 0
+  ammoMax: 30
+  reloadTime: 3
   playerStamina: 0
   maxStamina: 10
   staminaDrain: 2

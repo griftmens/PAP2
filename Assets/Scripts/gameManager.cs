@@ -29,8 +29,9 @@ public class gameManager : MonoBehaviour
     public TextMeshProUGUI HPCurrent;
     public TextMeshProUGUI HPTotal;
     public Image StamBar;
+    public Image ammoBar;
+    public Image firerateBar;
     public TextMeshProUGUI enemiesRemainingText;
-    public TextMeshProUGUI AmmoCount;
     public TextMeshProUGUI MoneyCount;
     public TextMeshProUGUI OfferingCount;
     public Image overdrive;
@@ -127,6 +128,18 @@ public class gameManager : MonoBehaviour
             playerScript.money = data.money;
             levelsCleared = data.levelsCleared;
             playerScript.offerings = data.offerings;
+            if(data.guns > 0) // guns that are purchased will be saved
+            {
+                //gameManager.instance.playerScript.gunsInventory.Add();
+                if(data.guns > 1)
+                {
+                    //gameManager.instance.playerScript.gunsInventory.Add();
+                    if (data.guns > 2)
+                    {
+                        //gameManager.instance.playerScript.gunsInventory.Add();
+                    }
+                }
+            }
         }
     }
 
