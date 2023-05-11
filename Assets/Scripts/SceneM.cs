@@ -27,6 +27,10 @@ public class SceneM : MonoBehaviour
     private void Awake(){
         //volumeSFX.onValueChanged.AddListener(ControlSFX);
     }
+    public void DeleteSave()
+    {
+        gameManager.instance.DeleteSave();
+    }
 
      public void StartG(){
         Time.timeScale = 1;

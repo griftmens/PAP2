@@ -120,6 +120,15 @@ public class gameManager : MonoBehaviour
         SaveSystem.SavePlayer();
     }
 
+    public void DeleteSave()
+    {
+        levelsCleared = 0;
+        playerScript.offerings = 0;
+        playerScript.money = 0;
+        playerScript.gunsInventory.Clear();
+        SaveSystem.SavePlayer();
+    }
+
     public void Load()
     {
         PlayerData data = SaveSystem.LoadPlayer();
@@ -151,6 +160,14 @@ public class gameManager : MonoBehaviour
         if(amount == -1)
         {
             playerScript.Absorb();
+        }
+
+        //temp win code
+
+        if(enemiesRemaining <= 0)
+        {
+            SaveSystem.SavePlayer();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
