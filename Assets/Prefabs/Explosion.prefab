@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionDamage: 3
-  explosionRange: 100
+  explosionRange: 30
   explosionSpeed: 1
 --- !u!33 &4240381697448314641
 MeshFilter:

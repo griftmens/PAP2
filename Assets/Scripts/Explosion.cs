@@ -25,22 +25,20 @@ public class Explosion : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
+
+        IDamage damageable = other.GetComponent<IDamage>();
+        if (damageable != null)
         {
-            Destroy(gameObject);
-            IDamage damageable = other.GetComponent<IDamage>();
-            if (damageable != null)
+            if (other.CompareTag("Player"))
             {
-                //if(other.CompareTag("Player"))
-                //{
-                //    if (!hit)
-                //    {
-                //        hit = true;
-                //        Damageable.TakeDamage(explosionDamage);
-                //    }
-                //}
-                //else
-                //    Damageable.TakeDamage(explosionDamage);
+                if (!hit)
+                {
+                    hit = true;
+                    damageable.TakeDamage(explosionDamage);
+                }
+            }
+            else if(other.GetType() == typeof(CapsuleCollider))
+            {
                 damageable.TakeDamage(explosionDamage);
             }
         }
