@@ -18,13 +18,16 @@ public class gameManager : MonoBehaviour
     public int levelsCleared;
     public int playerOfferings;
 
+    [Header("----- Shop System -----")]
+    public GameObject shopMenu;
+
     [Header("----- UI Elements / Menus -----")]
     public GameObject activeMenu;
+    public TextMeshProUGUI message;
     public GameObject pauseMenu;
     public GameObject winMenu;
     public GameObject loseMenu;
     public GameObject optionMenu;
-    public GameObject shopMenu;
     public Image HPBar;
     public TextMeshProUGUI HPCurrent;
     public TextMeshProUGUI HPTotal;
@@ -50,10 +53,6 @@ public class gameManager : MonoBehaviour
 
     public int enemiesRemaining;
 
-    [Header("----- Weapons -----")]
-    [SerializeField] GameObject GunLight;
-    [SerializeField] GameObject GunMedium;
-    [SerializeField] GameObject GunHeavy;
 
     public bool isPaused;
     float timeScaleOg;
@@ -67,7 +66,7 @@ public class gameManager : MonoBehaviour
         playerSpawnPos = GameObject.FindGameObjectWithTag("Player Spawn Pos");
         timeScaleOg = Time.timeScale;
         optionMenu.SetActive(false);
-        Load();
+        StartCoroutine(StartLoad());
     }
 
     void Update()
@@ -85,23 +84,27 @@ public class gameManager : MonoBehaviour
         }
     }
 
-    public void SpawnGunMed()
-    {
-        Instantiate(GunMedium, playerScript.transform);
-        playerScript.money -= 10;
-    }
-    public void SpawnGunHeavy()
-    {
-        Instantiate(GunHeavy, playerScript.transform);
-        playerScript.money -= 20;
-    }
-
     public void Shop()
     {
         activeMenu = shopMenu;
         activeMenu.SetActive(true);
-        Pause();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
+
+    public void StartMessage(string text)
+    {
+        StartCoroutine(Message(text));
+    }
+
+    IEnumerator Message(string text)
+    {
+        message.text = text;
+        yield return new WaitForSeconds(1);
+        message.text = "";
+    }
+
+    // Functions
 
     public void Pause()
     {
@@ -137,6 +140,8 @@ public class gameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    // Save System
+
     public void Save()
     {
         //GetComponent<AudioSource>().Play();
@@ -153,6 +158,12 @@ public class gameManager : MonoBehaviour
         SaveSystem.SavePlayer();
     }
 
+    IEnumerator StartLoad()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Load();
+    }
+
     public void Load()
     {
         PlayerData data = SaveSystem.LoadPlayer();
@@ -161,14 +172,15 @@ public class gameManager : MonoBehaviour
             playerScript.money = data.money;
             levelsCleared = data.levelsCleared;
             playerScript.offerings = data.offerings;
-            Instantiate(GunLight, playerSpawnPos.transform);
-            if (data.guns > 1)
+            playerScript.PickupGun(ShopManager.instance.GunLight);
+            if (data.medBought)
             {
-                Instantiate(GunMedium, playerSpawnPos.transform);
-                if (data.guns > 2)
-                {
-                    Instantiate(GunHeavy, playerSpawnPos.transform);
-                }
+                playerScript.PickupGun(ShopManager.instance.GunMedium);
+            }
+
+            if (data.heavyBought)
+            {
+                playerScript.PickupGun(ShopManager.instance.GunHeavy);
             }
         }
     }

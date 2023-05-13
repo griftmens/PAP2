@@ -296,6 +296,7 @@ public class Player : MonoBehaviour, IDamage
 
         gunModel.sharedMesh = gunStat.model.GetComponentInChildren<MeshFilter>().sharedMesh;
         gunMaterial.sharedMaterial = gunStat.model.GetComponentInChildren<MeshRenderer>().sharedMaterial;
+        UIUpdate();
     }
 
     public void PickupMoney(int moneyAmt)

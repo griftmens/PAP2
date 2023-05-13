@@ -8,13 +8,15 @@ public class PlayerData
     public int money;
     public int offerings;
     public int levelsCleared;
-    public int guns;
+    public bool medBought;
+    public bool heavyBought;
 
     public PlayerData()
     {
         money = gameManager.instance.playerScript.money;
         offerings = gameManager.instance.playerScript.offerings;
         levelsCleared = gameManager.instance.levelsCleared;
-        guns = gameManager.instance.playerScript.gunsInventory.Count;
+        medBought = ShopManager.instance.medBought;
+        heavyBought = ShopManager.instance.heavyBought;
     }
 }

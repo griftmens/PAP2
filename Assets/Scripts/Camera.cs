@@ -14,11 +14,14 @@ public class Camera : MonoBehaviour
     }
 
     void Update() {
-        mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensHor;
-        mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensVer;
-        xRotation += mouseY;
-        xRotation = Mathf.Clamp(xRotation, lockVerMin, lockVerMax);
-        transform.localRotation = Quaternion.Euler(-xRotation, 0, 0);
-        transform.parent.Rotate(Vector3.up * mouseX);
+        if (!gameManager.instance.shopMenu.activeSelf)
+        {
+            mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensHor;
+            mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensVer;
+            xRotation += mouseY;
+            xRotation = Mathf.Clamp(xRotation, lockVerMin, lockVerMax);
+            transform.localRotation = Quaternion.Euler(-xRotation, 0, 0);
+            transform.parent.Rotate(Vector3.up * mouseX);
+        }
     } 
 }
