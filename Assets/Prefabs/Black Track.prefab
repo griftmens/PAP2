@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5667170592072225920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Object02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686692540184053471}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0000000047683715, y: 0.012599873, z: 0}
+  m_LocalPosition: {x: -0.0000000047683715, y: 0.0025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4071474886417657071}
   - component: {fileID: 8079893730310756139}
   - component: {fileID: 5459888632059312925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4425366000653759198}
   - component: {fileID: 4674623471394061410}
   - component: {fileID: 4358282828335898683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 6856125410999200384}
   - component: {fileID: 2332520958022175571}
   - component: {fileID: 1189145579097737445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,9 +293,11 @@ GameObject:
   - component: {fileID: 1831581992412387268}
   - component: {fileID: 6389840249427308727}
   - component: {fileID: 1494800825722880808}
-  m_Layer: 0
+  - component: {fileID: 3219637175236311601}
+  - component: {fileID: 5936049941577481622}
+  m_Layer: 6
   m_Name: Black Track
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6548444043812214860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.9, y: 4.08, z: 67.82}
+  m_LocalPosition: {x: 37.9, y: 4.78, z: 67.82}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -346,14 +348,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d136caefc17b948b8c7850d1b87bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossmodel: {fileID: 0}
+  bossmodel: {fileID: 5459888632059312925}
   bossagent: {fileID: 1494800825722880808}
   bossHeadpos: {fileID: 6856125410999200384}
   bossShootpos: {fileID: 6856125410999200384}
   bossHealth: 20
   bossPlayerFaceSpeed: 1
   bossSightAngle: 90
-  bossFireRate: 1
+  bossFireRate: 3.1
   bossShotDistance: 10
   bossShotDamage: 5
   bossBulletSpeed: 3
@@ -380,3 +382,30 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &3219637175236311601
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548444043812214860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.05
+  m_Height: 0
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &5936049941577481622
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548444043812214860}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}

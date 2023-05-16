@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 5504498987805904438}
   aud: {fileID: -6431888647377522342}
-  hp: 10
+  hp: 100
   playerSpeed: 8
   sprintMultiplier: 2
   gravity: 25
