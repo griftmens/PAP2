@@ -191,8 +191,11 @@ MonoBehaviour:
   absorptionCooldown: 20
   absorbChance: 3
   absorbAmount: 1
-  laserstrikeCooldown: 0
+  laserstrikeTime: 5
+  laserstrikeDamage: 2
+  laserstrikeCooldown: 5
   LaserPredictionPrefab: {fileID: 361027916143707320, guid: 421e9b183919b8f4fa9b45c9d8e39688, type: 3}
+  LaserStrikePrefab: {fileID: 6600150192137386427, guid: b51afc1d05e2bc645928bbe7a980804d, type: 3}
   phaseTime: 3
   phaseCooldown: 20
   kamikazeChargeTime: 1

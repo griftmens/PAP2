@@ -197,11 +197,11 @@ public class gameManager : MonoBehaviour
 
         //temp win code
 
-        if(enemiesRemaining <= 0)
-        {
-            SaveSystem.SavePlayer();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        //if(enemiesRemaining <= 0)
+        //{
+        //    SaveSystem.SavePlayer();
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //}
     }
 
     public void PlayerDead()

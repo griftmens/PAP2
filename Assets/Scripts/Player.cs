@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -75,10 +76,12 @@ public class Player : MonoBehaviour, IDamage
     bool absorptionActive, absorptionWait;
     float absorptionTimer;
 
+    public int laserstrikeTime, laserstrikeDamage;
     [SerializeField] int laserstrikeCooldown;
-    bool laserstrikeWait, gettingPosition;
+    bool laserstrikeWait, gettingPosition, laserstrikeActive;
     float laserstrikeTimer;
     [SerializeField] GameObject LaserPredictionPrefab;
+    [SerializeField] GameObject LaserStrikePrefab;
     GameObject laserPrediction;
 
     public int phaseTime;
@@ -452,7 +455,27 @@ public class Player : MonoBehaviour, IDamage
         }
         if(gettingPosition)
         {
-            LaserPrediction();
+            if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit))
+            {
+                laserPrediction.transform.position = hit.point;
+            }
+            if(Input.GetButton("Fire1"))
+            {
+                gettingPosition = false;
+                laserPrediction.SetActive(gettingPosition);
+                laserstrikeTimer = laserstrikeTime;
+                StartCoroutine(LaserStrike());
+            }
+        }
+        if (laserstrikeActive)
+        {
+            laserstrikeTimer -= Time.deltaTime;
+            gameManager.instance.laserstrike.fillAmount = laserstrikeTimer / laserstrikeTime;
+        }
+        else if (laserstrikeWait)
+        {
+            laserstrikeTimer += Time.deltaTime;
+            gameManager.instance.laserstrike.fillAmount = laserstrikeTimer / laserstrikeCooldown;
         }
 
         // Phase
@@ -522,21 +545,20 @@ public class Player : MonoBehaviour, IDamage
 
         kamikazeWait = false;
     }
-    IEnumerator LaserStrikeCooldown()
+    IEnumerator LaserStrike()
     {
         laserstrikeWait = true;
+        laserstrikeActive = true;
+
+        GameObject laserStrike = Instantiate(LaserStrikePrefab, laserPrediction.transform.position, new Quaternion());
+
+        yield return new WaitForSeconds(laserstrikeTime);
+
+        laserstrikeActive = false;
 
         yield return new WaitForSeconds(laserstrikeCooldown);
 
         laserstrikeWait = false;
-    }
-
-    void LaserPrediction()
-    {
-        if(Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit))
-        {
-            laserPrediction.transform.position = hit.point;
-        }
     }
 
     IEnumerator Phase()
