@@ -75,6 +75,12 @@ public class Player : MonoBehaviour, IDamage
     bool absorptionActive, absorptionWait;
     float absorptionTimer;
 
+    [SerializeField] int laserstrikeCooldown;
+    bool laserstrikeWait, gettingPosition;
+    float laserstrikeTimer;
+    [SerializeField] GameObject LaserPredictionPrefab;
+    GameObject laserPrediction;
+
     public int phaseTime;
     [SerializeField] int phaseCooldown;
     bool phaseActive, phaseWait;
@@ -84,7 +90,7 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] int kamikazeCooldown;
     bool kamikazeCharging, kamikazeWait, kamikazeCharged;
     float kamikazeChargeTimer, kamikazeCooldownTimer;
-    [SerializeField] GameObject Explosion;
+    [SerializeField] GameObject ExplosionPrefab;
 
 
     #endregion
@@ -95,6 +101,8 @@ public class Player : MonoBehaviour, IDamage
     int jumpedTimes;
     public int hpOrig;
     float staminaOrig;
+    RaycastHit hit;
+    bool laserFirst;
 
     #endregion
 
@@ -105,6 +113,7 @@ public class Player : MonoBehaviour, IDamage
         staminaOrig = playerStamina;
         ammoCount = ammoMax;
         weAreSprinting = false;
+        laserFirst = false;
         RespawnPlayer();
         UIUpdate();
     }
@@ -224,7 +233,6 @@ public class Player : MonoBehaviour, IDamage
         //aud.PlayOneShot(gunsInventory[selectedGun].gunShotAud, gunsInventory[selectedGun].gunShotAudVol);
         isShooting = true;
         UpdateAmmoCount(-shootEnergy);
-        RaycastHit hit;
         if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootRange))
         {
             IDamage damageable = hit.collider.GetComponent<IDamage>();
@@ -430,6 +438,23 @@ public class Player : MonoBehaviour, IDamage
             gameManager.instance.kamikaze.fillAmount = kamikazeCooldownTimer / kamikazeCooldown;
         }
 
+        // Laser Strike
+        if (Input.GetKeyDown(KeyCode.V) && abilities > 3 && !laserstrikeWait)
+        {
+            gettingPosition = !gettingPosition;
+            if(!laserFirst)
+            {
+                laserFirst = true;
+                laserPrediction = Instantiate(LaserPredictionPrefab);
+            }
+            else
+                laserPrediction.SetActive(gettingPosition);
+        }
+        if(gettingPosition)
+        {
+            LaserPrediction();
+        }
+
         // Phase
 
         if (Input.GetKeyDown(KeyCode.X) && !phaseWait && abilities > 4)
@@ -491,9 +516,27 @@ public class Player : MonoBehaviour, IDamage
     IEnumerator Kamikaze()
     {
         kamikazeWait = true;
-        GameObject explosion = Instantiate(Explosion, transform.position, new Quaternion());
+        GameObject explosion = Instantiate(ExplosionPrefab, transform.position, new Quaternion());
+
         yield return new WaitForSeconds(kamikazeCooldown);
+
         kamikazeWait = false;
+    }
+    IEnumerator LaserStrikeCooldown()
+    {
+        laserstrikeWait = true;
+
+        yield return new WaitForSeconds(laserstrikeCooldown);
+
+        laserstrikeWait = false;
+    }
+
+    void LaserPrediction()
+    {
+        if(Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit))
+        {
+            laserPrediction.transform.position = hit.point;
+        }
     }
 
     IEnumerator Phase()
