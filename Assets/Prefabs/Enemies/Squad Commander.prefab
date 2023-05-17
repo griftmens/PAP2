@@ -279,8 +279,8 @@ MonoBehaviour:
   roamPauseTime: 0
   roamDistance: 0
   animTransSpeed: 0
-  drop: {fileID: 0}
-  dropChance: 0
+  drop: {fileID: 100000, guid: f61e2c06933fe5145a42eccb1e13acc7, type: 3}
+  dropChance: 20
   FireRate: 0.4
   ShotDistance: 10
   ShotDamage: 10

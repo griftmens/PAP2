@@ -359,7 +359,7 @@ MonoBehaviour:
   bossShotDistance: 10
   bossShotDamage: 5
   bossBulletSpeed: 3
-  bossBullet: {fileID: 0}
+  bossBullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
 --- !u!195 &1494800825722880808
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -470,7 +470,7 @@ MonoBehaviour:
   bossShotDistance: 10
   bossShotDamage: 3
   bossBulletSpeed: 3
-  bossBullet: {fileID: 0}
+  bossBullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
 --- !u!4 &5494462720729437663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1566665873163594363, guid: fcbae3aff472eaa4d8b8c12283f34fb8, type: 3}

@@ -22,10 +22,10 @@ PrefabInstance:
     - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: drop
       value: 
-      objectReference: {fileID: 900889823605866966, guid: eaf42404c729ba94ba0eaeabd63206ae, type: 3}
+      objectReference: {fileID: 5758659854218394084, guid: 1e9295ea1e7f90b409d3e0e807069467, type: 3}
     - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: dropChance
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: audShootVol
