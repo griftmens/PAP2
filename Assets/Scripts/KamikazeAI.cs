@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-public class KamikazeAI : MonoBehaviour
+public class KamikazeAI : MonoBehaviour, IDamage
 {
     [Header("-----Components-----")]
     [SerializeField] Renderer model;
@@ -24,8 +24,11 @@ public class KamikazeAI : MonoBehaviour
     [SerializeField] float animTransSpeed;
     [SerializeField] GameObject drop;
     [SerializeField] int dropChance;
+    [SerializeField] int selfdestructtime;
+    [SerializeField] GameObject Explosionprefab;
 
     bool PlayerinRange;
+    bool isexploding;
     Vector3 PlayerDirection;
     float AngleToPlayer;
     float StopDistance;
@@ -100,6 +103,8 @@ public class KamikazeAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerinRange = true;
+            Selfdestruct();
+           
         }
     }
     public void OnTriggerExit(Collider other)
@@ -145,5 +150,18 @@ public class KamikazeAI : MonoBehaviour
     {
         Quaternion face = Quaternion.LookRotation(new Vector3(PlayerDirection.x, 0, PlayerDirection.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, face, Time.deltaTime * PlayerFaceSpeed);
+    }
+    IEnumerator Selfdestruct()
+    {
+        isexploding = true;
+        yield return new WaitForSeconds(selfdestructtime);
+        GameObject boom = Instantiate(Explosionprefab, transform.position, new Quaternion());
+        StopAllCoroutines();
+        gameManager.instance.UpdateGameGoal(-1);
+        anim.SetBool("Dead", true);
+        GetComponent<CapsuleCollider>().enabled = false;
+        agent.enabled = false;
+
+        
     }
 }

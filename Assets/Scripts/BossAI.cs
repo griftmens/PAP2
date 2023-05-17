@@ -39,11 +39,15 @@ public class BossAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        if (bossPlayerinRange)
+        if (bossagent.isActiveAndEnabled)
         {
-            if (CanSee())
-            {
 
+            if (bossPlayerinRange)
+            {
+                if (CanSee())
+                {
+
+                }
             }
         }
     }
