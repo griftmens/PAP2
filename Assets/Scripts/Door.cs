@@ -20,11 +20,9 @@ public class Door : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Me estan tocando");
         if (other.gameObject.tag == "Player" && gameManager.instance.enemiesRemaining <= 0) {
             SceneManager.LoadScene(actualScene + 1);
             gameManager.instance.playerScript.hp = gameManager.instance.playerScript.hpOrig;
-            Debug.Log("estoy entrando");
         }
     }
 }

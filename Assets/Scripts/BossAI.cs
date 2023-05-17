@@ -52,7 +52,6 @@ public class BossAI : MonoBehaviour, IDamage
         bossPlayerDirection = (gameManager.instance.player.transform.position - bossHeadpos.position);
         bossAngleToPlayer = Vector3.Angle(new Vector3(bossPlayerDirection.x, 0, bossPlayerDirection.z), transform.forward);
         Debug.DrawRay( bossHeadpos.position, bossPlayerDirection);
-        // Debug.Log(AngleToPlayer);
         RaycastHit hit;
         if (Physics.Raycast(bossHeadpos.position, bossPlayerDirection, out hit))
         {
