@@ -125,7 +125,6 @@ public class gameManager : MonoBehaviour
         Time.timeScale = timeScaleOg;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        //GetComponent<AudioSource>().Play();
         activeMenu.SetActive(false);
         activeMenu = null;
     }
@@ -138,10 +137,6 @@ public class gameManager : MonoBehaviour
     }
 
     public void QuitGame(){
-        // foreach (GameObject o in Object.FindObjectsOfType<GameObject>()) {
-        //      Destroy(o);
-        // }
-        //GetComponent<AudioSource>().Play();
         PlaySound();
         SceneManager.LoadScene(0);
     }
@@ -150,7 +145,6 @@ public class gameManager : MonoBehaviour
 
     public void Save()
     {
-        //GetComponent<AudioSource>().Play();
         PlaySound();
         SaveSystem.SavePlayer();
     }
@@ -200,14 +194,6 @@ public class gameManager : MonoBehaviour
         {
             playerScript.Absorb();
         }
-
-        //temp win code
-
-        //if(enemiesRemaining <= 0)
-        //{
-        //    SaveSystem.SavePlayer();
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //}
     }
 
     public void PlayerDead()

@@ -13,7 +13,6 @@ public class Explosion : MonoBehaviour
     void Update()
     {
         Vector3 explosionDistance = new Vector3(explosionRange, explosionRange, explosionRange);
-        //transform.localScale = Vector3.Lerp(transform.localScale, explosionDistance, Time.deltaTime * explosionSpeed);
 
         transform.localScale += explosionSpeed * explosionDistance * Time.deltaTime;
 

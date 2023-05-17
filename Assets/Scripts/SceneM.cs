@@ -19,14 +19,6 @@ public class SceneM : MonoBehaviour
 
     public Slider volumeSFX;
     public Slider volumeMusic;
-    // public AudioSource source {get {return GetComponent<AudioSource>();}}
-    // public Button btnStart{get {return GetComponent<Button>();}}
-    // public AudioClip clip;
-    // public Button btnOptions;
-
-    private void Awake(){
-        //volumeSFX.onValueChanged.AddListener(ControlSFX);
-    }
     public void DeleteSave()
     {
         gameManager.instance.DeleteSave();
@@ -34,8 +26,6 @@ public class SceneM : MonoBehaviour
 
      public void StartG(){
         Time.timeScale = 1;
-        // gameObject.AddComponent<AudioSource>();
-        // btnStart.onClick.AddListener(PlaySound);
         PlaySound();
         SceneManager.LoadScene(1);
     }
@@ -44,7 +34,6 @@ public class SceneM : MonoBehaviour
         uiMain.SetActive(false);
         optionMain.SetActive(true);
         PlaySound();
-        //btnOptions.onClick.AddListener(PlaySound);
     }
 
     public void BackG(){
@@ -52,10 +41,6 @@ public class SceneM : MonoBehaviour
         optionMain.SetActive(false);
         creditsMain.SetActive(false);
         uiMain.SetActive(true);
-
-        // if(Input.GetKey(KeyCode.Delete) && (optionMain == true || creditsMain == true)){
-        //     uiMain.SetActive(true);
-        // }
     }
 
     public void CreditsG(){

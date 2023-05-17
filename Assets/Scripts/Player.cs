@@ -167,7 +167,6 @@ public class Player : MonoBehaviour, IDamage
         }
         if (Input.GetButtonDown("Jump") && jumpedTimes < jumpMaxTimes)
         {
-            //aud.PlayOneShot(audJump[Random.Range(0, audJump.Length)], audJumpVol);
             jumpedTimes++;
             playerVelocity.y = jumpHeight;
         }
@@ -207,7 +206,6 @@ public class Player : MonoBehaviour, IDamage
     }
     public void TakeDamage(int Damage)
     {
-        //aud.PlayOneShot(audDamage[Random.Range(0, audDamage.Length)], audDamageVol);
         if (!phaseActive)
         {
             hp -= Damage;
@@ -233,7 +231,6 @@ public class Player : MonoBehaviour, IDamage
     }
     IEnumerator Shoot()
     {
-        //aud.PlayOneShot(gunsInventory[selectedGun].gunShotAud, gunsInventory[selectedGun].gunShotAudVol);
         isShooting = true;
         UpdateAmmoCount(-shootEnergy);
         if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootRange))
