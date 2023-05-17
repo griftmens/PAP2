@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5399838767366383486}
   - component: {fileID: 5471909686546140470}
   - component: {fileID: -9174939961542239205}
+  - component: {fileID: -8995836758264916955}
   m_Layer: 0
   m_Name: soul gem
   m_TagString: Untagged
@@ -118,3 +119,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.03
   m_Center: {x: -0.0055656256, y: 0.02346941, z: 0.013663684}
+--- !u!114 &-8995836758264916955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377912981734601266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f8252791e8bfa45afa50cebe2af78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

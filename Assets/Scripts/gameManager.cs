@@ -183,6 +183,11 @@ public class gameManager : MonoBehaviour
                 playerScript.PickupGun(ShopManager.instance.GunHeavy);
             }
         }
+        else
+        {
+            DeleteSave();
+            StartCoroutine(StartLoad());
+        }
     }
 
     public void UpdateGameGoal(int amount)
