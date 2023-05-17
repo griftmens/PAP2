@@ -128,6 +128,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
         if (other.CompareTag("Player"))
         {
             PlayerinRange = true;
+            
         }
     }
     public void OnTriggerExit(Collider other)
