@@ -10,6 +10,6 @@ public class GameMusic : MonoBehaviour
     public AudioMixer musicMixer;
 
     public void ControlMusicGame(float sliderMusicG){
-        musicMixer.SetFloat("GameMusicVol", Mathf.Log10(sliderMusicG) * 20);
+        musicMixer.SetFloat("GameMusicVol", Mathf.Log10(sliderMusicG) * 10);
     }
 }
