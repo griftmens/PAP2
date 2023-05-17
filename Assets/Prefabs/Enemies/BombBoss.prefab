@@ -5271,6 +5271,8 @@ MonoBehaviour:
   animTransSpeed: 2
   drop: {fileID: 5377912981734601266, guid: a14c36252e4f1ca429aaa164aa5a67d5, type: 3}
   dropChance: 100
+  selfdestructtime: 10
+  Explosionprefab: {fileID: 4240381697448314644, guid: 3802529cb6fa00449a4ab4feb61adaf6, type: 3}
 --- !u!195 &4195959660376679874
 NavMeshAgent:
   m_ObjectHideFlags: 0
