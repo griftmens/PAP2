@@ -63,7 +63,6 @@ public class gameManager : MonoBehaviour
 
     public bool isPaused;
     float timeScaleOg;
-    Door dScene;
 
     void Awake()
     {
