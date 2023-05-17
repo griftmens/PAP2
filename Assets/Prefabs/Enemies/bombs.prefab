@@ -235,13 +235,15 @@ MonoBehaviour:
   aud: {fileID: 4621292394225906165}
   Health: 10
   PlayerFaceSpeed: 5
-  Damage: 0
+  Damage: 10
   SightAngle: 180
   roamPauseTime: 5
   roamDistance: 5
   animTransSpeed: 1
-  drop: {fileID: 0}
-  dropChance: 0
+  drop: {fileID: 100000, guid: e40fa0edf8a05e246b4f2025b5acdf75, type: 3}
+  dropChance: 50
+  selfdestructtime: 5
+  Explosionprefab: {fileID: 4240381697448314644, guid: 3802529cb6fa00449a4ab4feb61adaf6, type: 3}
 --- !u!195 &8643466524203637957
 NavMeshAgent:
   m_ObjectHideFlags: 0
