@@ -10,6 +10,6 @@ public class LevelPad : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
-            SceneManager.LoadScene(levelNum);
+            gameManager.instance.levelnum = levelNum;
     }
 }

@@ -53,12 +53,19 @@ public class gameManager : MonoBehaviour
 
     public int enemiesRemaining;
 
+    [Header("----- Level stuff -----")]
+    public int levelnum;
+    [SerializeField] GameObject Level1;
+    [SerializeField] GameObject Level2;
+    [SerializeField] GameObject Level3;
+    [SerializeField] GameObject Level4;
+    [SerializeField] GameObject Level5;
 
     public bool isPaused;
     float timeScaleOg;
     Door dScene;
 
-    void Awake() // 
+    void Awake()
     {
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -258,4 +265,5 @@ public class gameManager : MonoBehaviour
     public void PlaySound(){
         sfxGame.PlayOneShot(clickSoungG);
     }
+
 }
