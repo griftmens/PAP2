@@ -266,4 +266,47 @@ public class gameManager : MonoBehaviour
         sfxGame.PlayOneShot(clickSoungG);
     }
 
+    public void ChangeLevel(int level)
+    {
+        levelnum = level;
+        switch (level)
+        {
+            case 1:
+                Level1.SetActive(true); 
+                Level2.SetActive(false);
+                Level3.SetActive(false);
+                Level4.SetActive(false);
+                Level5.SetActive(false);
+                break;
+            case 2:
+                Level1.SetActive(false);
+                Level2.SetActive(true);
+                Level3.SetActive(false);
+                Level4.SetActive(false);
+                Level5.SetActive(false);
+                break;
+            case 3:
+                Level1.SetActive(false);
+                Level2.SetActive(false);
+                Level3.SetActive(true);
+                Level4.SetActive(false);
+                Level5.SetActive(false);
+                break;
+            case 4:
+                Level1.SetActive(false);
+                Level2.SetActive(false);
+                Level3.SetActive(false);
+                Level4.SetActive(true);
+                Level5.SetActive(false);
+                break;
+            case 5:
+                Level1.SetActive(false);
+                Level2.SetActive(false);
+                Level3.SetActive(false);
+                Level4.SetActive(false);
+                Level5.SetActive(true);
+                break;
+        }
+    }
+
 }
