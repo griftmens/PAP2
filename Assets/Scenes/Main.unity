@@ -10879,6 +10879,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1809032654164247564, guid: 1eb8e128b45ad7047bf62a699a76cba5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb8e128b45ad7047bf62a699a76cba5, type: 3}
 --- !u!1001 &321474951
@@ -19123,6 +19127,18 @@ PrefabInstance:
       propertyPath: m_WholeNumbers
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8258101079673162088, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8258101079673162088, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8258101079673162088, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 540
+      objectReference: {fileID: 0}
     - target: {fileID: 8839840778374569869, guid: 093333c688aedf64f97ab9701563a924, type: 3}
       propertyPath: Level1
       value: 
@@ -26655,6 +26671,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6608398764602000829}
     m_Modifications:
+    - target: {fileID: 4195959660376679874, guid: 206edcd43252c76468cd0dfe7b4fbd3d, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195959660376679874, guid: 206edcd43252c76468cd0dfe7b4fbd3d, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6783032660597215216, guid: 206edcd43252c76468cd0dfe7b4fbd3d, type: 3}
       propertyPath: m_RootOrder
       value: 10
