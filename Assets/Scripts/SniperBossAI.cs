@@ -35,8 +35,7 @@ public class SniperBossAI : MonoBehaviour, IDamage
     [SerializeField][Range(0, 1)] float audShootVol;
 
 
-    bool PlayerinRange;
-    bool IsShooting;
+    bool IsShooting, hiding;
     Vector3 PlayerDirection;
     float AngleToPlayer;
     float StopDistance;
@@ -50,7 +49,6 @@ public class SniperBossAI : MonoBehaviour, IDamage
         gameManager.instance.UpdateGameGoal(1);
         StopDistance = agent.stoppingDistance;
         startingPos = transform.position;
-
     }
 
     // Update is called once per frame
@@ -60,7 +58,8 @@ public class SniperBossAI : MonoBehaviour, IDamage
         {
             speed = Mathf.Lerp(speed, agent.velocity.normalized.magnitude, Time.deltaTime * 3);
             anim.SetFloat("Speed", agent.velocity.normalized.magnitude);
-            if (PlayerinRange && !CanSee())
+            CanSee();
+            if (!destinationChosen && agent.remainingDistance < 0.05)
             {
                 StartCoroutine(Roam());
             }
@@ -70,21 +69,18 @@ public class SniperBossAI : MonoBehaviour, IDamage
     }
     IEnumerator Roam()
     {
-        if (!destinationChosen && agent.remainingDistance < 0.05)
-        {
-            destinationChosen = true;
-            agent.stoppingDistance = 0;
-            yield return new WaitForSeconds(roamPauseTime);
-            destinationChosen = false;
+        destinationChosen = true;
+        agent.stoppingDistance = 0;
+        yield return new WaitForSeconds(roamPauseTime);
+        destinationChosen = false;
 
-            Vector3 randPos = Random.insideUnitSphere * roamDistance;
-            randPos += startingPos;
+        Vector3 randPos = Random.insideUnitSphere * roamDistance;
+        randPos += startingPos;
 
-            NavMesh.SamplePosition(randPos, out NavMeshHit hit, roamDistance, 1);
+        NavMesh.SamplePosition(randPos, out NavMeshHit hit, roamDistance, 1);
 
-            agent.SetDestination(hit.position);
-            destinationChosen = false;
-        }
+        agent.SetDestination(hit.position);
+        destinationChosen = false;
     }
     bool CanSee()
     {
@@ -94,10 +90,9 @@ public class SniperBossAI : MonoBehaviour, IDamage
         RaycastHit hit;
         if (Physics.Raycast(Headpos.position, PlayerDirection, out hit))
         {
-            if (hit.collider.CompareTag("Player") && AngleToPlayer <= SightAngle)
+            if (hit.collider.CompareTag("Player"))
             {
                 agent.stoppingDistance = StopDistance;
-                agent.SetDestination(gameManager.instance.player.transform.position);
                 if (agent.remainingDistance <= agent.stoppingDistance)
                 {
                     FacePlayer();
@@ -128,33 +123,28 @@ public class SniperBossAI : MonoBehaviour, IDamage
         yield return new WaitForSeconds(FireRate);
         IsShooting = false;
     }
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !hiding)
         {
-            PlayerinRange = true;
+            Retreat();
         }
     }
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerinRange = false;
-            agent.stoppingDistance = 0;
-        }
-    }
+    //public void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        PlayerinRange = false;
+    //        agent.stoppingDistance = 0;
+    //    }
+    //}
     public void TakeDamage(int damage)
     {
         Health -= damage;
         if (Health <= 0)
         {
             StopAllCoroutines();
-            if (drop)
-            {
-                int rand = Random.Range(0, dropChance);
-                if (rand == 0)
-                    Instantiate(drop, transform.position, drop.transform.rotation);
-            }
+            Instantiate(drop, transform.position, drop.transform.rotation);
             gameManager.instance.UpdateGameGoal(-1);
             anim.SetBool("Dead", true);
             GetComponent<CapsuleCollider>().enabled = false;
@@ -162,7 +152,6 @@ public class SniperBossAI : MonoBehaviour, IDamage
         }
         else
         {
-            agent.SetDestination(gameManager.instance.player.transform.position);
             agent.stoppingDistance = 0;
             anim.SetTrigger("Damage");
             StartCoroutine(FlashColor());
@@ -181,13 +170,15 @@ public class SniperBossAI : MonoBehaviour, IDamage
     }
     void Retreat()
     {
-        Vector3 movedirection = transform.position - gameManager.instance.player.transform.position;
-        transform.position = movedirection;
+        Roam();
+        StartCoroutine(Hide());
     }
     IEnumerator Hide()
     {
+        hiding = true;
         model.enabled= false;
         yield return new WaitForSeconds(2.0f);
+        hiding = false;
         model.enabled= true;
     }
 

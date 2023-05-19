@@ -19023,6 +19023,66 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 9daca8cecabcaa34480f1fe5768e7477, type: 3}
+    - target: {fileID: 5516013377651854841, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 415.871
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 320.423
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854842, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854843, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 35bc5c9ac51e9654d9652e408521de1f, type: 3}
+    - target: {fileID: 5516013377651854843, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854843, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854843, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516013377651854843, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5516013378011552250, guid: 093333c688aedf64f97ab9701563a924, type: 3}
       propertyPath: m_Name
       value: UI
@@ -42116,7 +42176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 776667454643868431, guid: 82126df384a9f1f4694bd498b7b5ca82, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 776667455055415264, guid: 82126df384a9f1f4694bd498b7b5ca82, type: 3}
       propertyPath: m_LocalScale.y
