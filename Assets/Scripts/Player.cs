@@ -277,7 +277,6 @@ public class Player : MonoBehaviour, IDamage
     void UIUpdate()
     {
         gameManager.instance.HPBar.fillAmount = (float)hp / (float)hpOrig;
-        //gameManager.instance.HPCurrent.text = hp.ToString("F0");
         gameManager.instance.StamBar.fillAmount = (float)playerStamina / (float)staminaOrig;
         gameManager.instance.ammoBar.fillAmount = (float)ammoCount / (float)ammoMax;
         gameManager.instance.firerateBar.fillAmount = rateTimer / rateLast;

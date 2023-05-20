@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: adf846d92ecceff40a255c732e55fb08, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e98972022d73fb749b360b3871fdea7a, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 778631a258bcaeb41ac0fb02013bd280, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c4b5de1c12b2e8488ba4cd250ad1952, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2652,6 +2652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088768239487922738}
   - component: {fileID: 8010695310323142423}
+  - component: {fileID: 412751087754805983}
   m_Layer: 5
   m_Name: SFX
   m_TagString: Untagged
@@ -2726,13 +2727,41 @@ MonoBehaviour:
   m_FillRect: {fileID: 7461029661762768029}
   m_HandleRect: {fileID: 3540879953282880945}
   m_Direction: 0
-  m_MinValue: 0.0001
-  m_MaxValue: 10
+  m_MinValue: 0.00001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.0001
+  m_Value: 0.51
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 412751087754805983}
+        m_TargetAssemblyTypeName: GameMusic, Assembly-CSharp
+        m_MethodName: ControlSFXGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &412751087754805983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072850294963705780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c711291cc1aad144dbf32cac9fa73b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicGame: {fileID: 0}
+  musicMixer: {fileID: 0}
+  sfxGame: {fileID: 6998534951168506291}
+  sfxMixer: {fileID: 24100000, guid: 0a0cddfe5415dff4dbd2584e130e48e8, type: 2}
 --- !u!1 &1107884634365513123
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,7 +3524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 31334f0b9e8e94a4d918b2bc3c2f903f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2625a97c25f27104fb9ab0f09719a944, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9890,10 +9919,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 6947349723120896050}
   m_HandleRect: {fileID: 7825171773755149612}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.00001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.59
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9923,6 +9952,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicGame: {fileID: 3061181031135917185}
   musicMixer: {fileID: 24100000, guid: e920ab992e1f7d047acef6fed7675067, type: 2}
+  sfxGame: {fileID: 0}
+  sfxMixer: {fileID: 0}
 --- !u!1 &8367628562127662584
 GameObject:
   m_ObjectHideFlags: 0

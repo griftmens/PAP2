@@ -695,13 +695,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 1032243797}
   m_HandleRect: {fileID: 980769325}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.00001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.438
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMusic, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &375657627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2997,7 +3009,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 758864494}
   m_HandleRect: {fileID: 2069547715}
   m_Direction: 0
-  m_MinValue: 0.01
+  m_MinValue: 0.00001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
@@ -3032,7 +3044,7 @@ MonoBehaviour:
   optionMain: {fileID: 0}
   creditsMain: {fileID: 0}
   showCase: {fileID: 0}
-  musicMain: {fileID: 0}
+  musicMain: {fileID: 1762767526}
   sfxMain: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: fe24466aa96177741a514053e1012387, type: 2}
   sfxMixer: {fileID: 0}
@@ -3983,8 +3995,8 @@ MonoBehaviour:
   showCase: {fileID: 380469762}
   musicMain: {fileID: 1762767526}
   sfxMain: {fileID: 1717382371}
-  audioMixer: {fileID: 0}
-  sfxMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: fe24466aa96177741a514053e1012387, type: 2}
+  sfxMixer: {fileID: 24100000, guid: 0a0cddfe5415dff4dbd2584e130e48e8, type: 2}
   clickSound: {fileID: 8300000, guid: 6c24efd761d0d2442a9957e0088e5734, type: 3}
   volumeSFX: {fileID: 0}
   volumeMusic: {fileID: 0}

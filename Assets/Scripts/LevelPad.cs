@@ -6,10 +6,17 @@ using UnityEngine.SceneManagement;
 public class LevelPad : MonoBehaviour
 {
     [SerializeField] int levelNum;
+    public AudioSource sfxLevelPad;
+
+    void Start(){
+        sfxLevelPad = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")){
             gameManager.instance.ChangeLevel(levelNum);
+            sfxLevelPad.Play();
+        }
     }
 }
