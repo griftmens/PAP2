@@ -1715,8 +1715,8 @@ MonoBehaviour:
   roamPauseTime: 5
   roamDistance: 2
   animTransSpeed: 5
-  drop: {fileID: 5758659854218394084, guid: 1e9295ea1e7f90b409d3e0e807069467, type: 3}
-  dropChance: 60
+  drop: {fileID: 900889823605866966, guid: eaf42404c729ba94ba0eaeabd63206ae, type: 3}
+  dropChance: 2
   FireRate: 0.5
   ShotDistance: 10
   ShotDamage: 1
