@@ -68,7 +68,23 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] int overdriveCooldown;
     bool overdriveActive, overdriveWait;
     float overdriveTimer;
+    [Header("----- Damage Overlay -----")]
+    public Image overlay;
+    public float durationOverlay;
+    public float fadeSpeed;
+    public float durationTimer;
 
+    [Header("----- Clips -----")]
+    [SerializeField] AudioClip shieldClip;
+    [SerializeField] AudioClip absorbClip;
+    [SerializeField] AudioClip runningClip;
+    [SerializeField] AudioClip shootClip;
+    [SerializeField] AudioSource shieldAud;
+    [SerializeField] AudioSource absorbAud;
+    [SerializeField] AudioSource runningAud;
+    [SerializeField] AudioSource shootAud;
+
+    [Header("----- Other -----")]
     [SerializeField] int absorptionTime;
     [SerializeField] int absorptionCooldown;
     [SerializeField] int absorbChance;
@@ -119,6 +135,11 @@ public class Player : MonoBehaviour, IDamage
         laserFirst = false;
         RespawnPlayer();
         UIUpdate();
+        overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 0);
+        shieldAud = GetComponent<AudioSource>();
+        absorbAud = GetComponent<AudioSource>();
+        runningAud = GetComponent<AudioSource>();
+        shootAud = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -140,6 +161,15 @@ public class Player : MonoBehaviour, IDamage
             if(isReloading)
             {
                 Reload();
+            }
+        }
+
+        if(overlay.color.a > 0){
+            durationTimer += Time.deltaTime;
+            if(durationTimer > durationOverlay){
+                float tempAlpha = overlay.color.a;
+                tempAlpha -= Time.deltaTime * fadeSpeed;
+                overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, tempAlpha);
             }
         }
     }
@@ -215,6 +245,9 @@ public class Player : MonoBehaviour, IDamage
                 gameManager.instance.PlayerDead();
             }
         }
+        durationTimer = 0;
+        overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 0.2f);
+        
     }
     IEnumerator Tired()
     {
@@ -233,6 +266,7 @@ public class Player : MonoBehaviour, IDamage
     {
         isShooting = true;
         UpdateAmmoCount(-shootEnergy);
+        shootAud.PlayOneShot(shootClip, 0.7f);
         if (Physics.Raycast(UnityEngine.Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootRange))
         {
             IDamage damageable = hit.collider.GetComponent<IDamage>();
@@ -358,6 +392,7 @@ public class Player : MonoBehaviour, IDamage
 
         if(Input.GetKeyDown(KeyCode.E) && !overdriveWait && !phaseActive)
         {
+            runningAud.PlayOneShot(runningClip, 0.7f);
             StartCoroutine(Overdrive());
             overdriveTimer = overdriveTime;
         }
@@ -376,6 +411,7 @@ public class Player : MonoBehaviour, IDamage
 
         if (Input.GetKeyDown(KeyCode.Q) && !absorptionWait && abilities > 1 && !phaseActive)
         {
+            absorbAud.PlayOneShot(absorbClip, 0.7f);
             StartCoroutine(Absorption());
             absorptionTimer = absorptionTime;
         }
@@ -479,6 +515,7 @@ public class Player : MonoBehaviour, IDamage
 
         if (Input.GetKeyDown(KeyCode.X) && !phaseWait && abilities > 4)
         {
+            shieldAud.PlayOneShot(shieldClip, 0.7f);
             StartCoroutine(Phase());
             phaseTimer = phaseTime;
         }

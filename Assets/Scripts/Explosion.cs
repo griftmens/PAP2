@@ -9,6 +9,7 @@ public class Explosion : MonoBehaviour
     [SerializeField] int explosionRange;
     [SerializeField, Range(1, 3)] float explosionSpeed;
     public AudioSource explosionSFX;
+    public AudioClip explosionClip;
 
     bool hit;
 
@@ -19,7 +20,7 @@ public class Explosion : MonoBehaviour
     void Update()
     {
         Vector3 explosionDistance = new Vector3(explosionRange, explosionRange, explosionRange);
-        explosionSFX.Play();
+        explosionSFX.PlayOneShot(explosionClip, 0.4f);
         transform.localScale += explosionSpeed * explosionDistance * Time.deltaTime;
 
         if (transform.localScale.x >= explosionDistance.x)

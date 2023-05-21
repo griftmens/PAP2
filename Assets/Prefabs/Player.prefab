@@ -187,6 +187,18 @@ MonoBehaviour:
   abilities: 5
   overdriveTime: 3
   overdriveCooldown: 6
+  overlay: {fileID: 0}
+  durationOverlay: 0
+  fadeSpeed: 0
+  durationTimer: 0
+  shieldClip: {fileID: 8300000, guid: e41e18edcd66ed541a9ccfaaa7123f66, type: 3}
+  absorbClip: {fileID: 8300000, guid: f15e997a049326a49904ecf640ba510e, type: 3}
+  runningClip: {fileID: 8300000, guid: c84dbaaef7f6bcb46b7643054c4d972a, type: 3}
+  shootClip: {fileID: 8300000, guid: 60258ae9ff6212f4881766649d1ecf83, type: 3}
+  shieldAud: {fileID: 0}
+  absorbAud: {fileID: 0}
+  runningAud: {fileID: 0}
+  shootAud: {fileID: 0}
   absorptionTime: 10
   absorptionCooldown: 20
   absorbChance: 3

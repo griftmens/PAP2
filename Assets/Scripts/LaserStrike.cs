@@ -7,6 +7,7 @@ public class LaserStrike : MonoBehaviour
 {
     bool isReady;
     public AudioSource laserSound;
+    public AudioClip laserClip;
     void Start()
     {
         isReady = true;
@@ -16,7 +17,7 @@ public class LaserStrike : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        laserSound.Play();
+        laserSound.PlayOneShot(laserClip, 0.4f);
         //Debug.Log("Sound activate");
         IDamage Damageable = other.GetComponent<IDamage>();
         if (Damageable != null && isReady && other.GetType() == typeof(CapsuleCollider))
