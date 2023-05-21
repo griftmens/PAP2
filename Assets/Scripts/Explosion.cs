@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Explosion : MonoBehaviour
 {
     [SerializeField] int explosionDamage;
     [SerializeField] int explosionRange;
     [SerializeField, Range(1, 3)] float explosionSpeed;
+    public AudioSource explosionSFX;
 
     bool hit;
+
+    void Start(){
+        explosionSFX = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
         Vector3 explosionDistance = new Vector3(explosionRange, explosionRange, explosionRange);
-
+        explosionSFX.Play();
         transform.localScale += explosionSpeed * explosionDistance * Time.deltaTime;
 
         if (transform.localScale.x >= explosionDistance.x)

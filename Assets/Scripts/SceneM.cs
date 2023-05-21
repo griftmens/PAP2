@@ -59,7 +59,7 @@ public class SceneM : MonoBehaviour
     }
 
     public void ControlSFX(float sliderSFXM){
-        audioMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFXM));
+        sfxMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFXM));
     }
 
     public void OpenShowCase(){

@@ -17,6 +17,7 @@ public class LaserStrike : MonoBehaviour
     public void OnTriggerStay(Collider other)
     {
         laserSound.Play();
+        //Debug.Log("Sound activate");
         IDamage Damageable = other.GetComponent<IDamage>();
         if (Damageable != null && isReady && other.GetType() == typeof(CapsuleCollider))
         {
