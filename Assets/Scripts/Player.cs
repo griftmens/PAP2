@@ -165,14 +165,14 @@ public class Player : MonoBehaviour, IDamage
             }
         }
 
-        if(overlay.color.a > 0){
-            durationTimer += Time.deltaTime;
-            if(durationTimer > durationOverlay){
-                float tempAlpha = overlay.color.a;
-                tempAlpha -= Time.deltaTime * fadeSpeed;
-                overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, tempAlpha);
-            }
-        }
+        //if(overlay.color.a > 0){
+        //    durationTimer += Time.deltaTime;
+        //    if(durationTimer > durationOverlay){
+        //        float tempAlpha = overlay.color.a;
+        //        tempAlpha -= Time.deltaTime * fadeSpeed;
+        //        overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, tempAlpha);
+        //    }
+        //}
     }
 
     void Movemente() {
