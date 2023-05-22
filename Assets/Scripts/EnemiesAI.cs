@@ -25,7 +25,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
 
     [Header("-----Gun Stats-----")]
     [Range((float).1, 1)][SerializeField] float FireRate;
-    [Range(1,10)][SerializeField] int ShotDistance;
+    [Range(1,100)][SerializeField] int ShotDistance;
     [Range(1, 100)][SerializeField] int ShotDamage;
     [SerializeField] float BulletSpeed;
     [SerializeField] GameObject Bullet;
@@ -153,6 +153,7 @@ public class EnemiesAI : MonoBehaviour, IDamage
             }
             gameManager.instance.UpdateGameGoal(-1);
             anim.SetBool("Dead", true);
+            Destroy(gameObject, 5);
             GetComponent<CapsuleCollider>().enabled = false;
             agent.enabled = false;
         }
@@ -161,7 +162,6 @@ public class EnemiesAI : MonoBehaviour, IDamage
             agent.SetDestination(gameManager.instance.player.transform.position);
             agent.stoppingDistance = 0;
             anim.SetTrigger("Damage");
-            Destroy(gameObject, 5);
             StartCoroutine(FlashColor());
         }
     }

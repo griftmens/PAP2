@@ -2676,11 +2676,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4555062712112460}
+  - component: {fileID: 2001421509}
   - component: {fileID: 95565753606369354}
   - component: {fileID: 5142881157043526819}
   - component: {fileID: 8161567189102219154}
   - component: {fileID: -3606242543276415143}
-  - component: {fileID: 2001421509}
   - component: {fileID: 2001421510}
   m_Layer: 6
   m_Name: Robot_Soldier_Black
@@ -2712,6 +2712,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2001421509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981860918171908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee59daa73af0e543942a2ab9579a6cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 137717473903895176}
+  agent: {fileID: 2001421510}
+  anim: {fileID: 95565753606369354}
+  Headpos: {fileID: 4220266448927598}
+  Shootpos: {fileID: 5711708909543596257}
+  aud: {fileID: -3606242543276415143}
+  Health: 20
+  PlayerFaceSpeed: 20
+  SightAngle: 180
+  roamPauseTime: 10
+  roamDistance: 2
+  animTransSpeed: 8
+  drop: {fileID: 900889823605866966, guid: eaf42404c729ba94ba0eaeabd63206ae, type: 3}
+  dropChance: 10
+  FireRate: 0.2
+  ShotDistance: 10
+  ShotDamage: 5
+  BulletSpeed: 20
+  Bullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
+  audShoot:
+  - {fileID: 8300000, guid: d7f7865a17229844093f4e4aabe78dd3, type: 3}
+  audShootVol: 0
 --- !u!95 &95565753606369354
 Animator:
   serializedVersion: 5
@@ -2855,40 +2889,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2001421509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981860918171908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee59daa73af0e543942a2ab9579a6cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  model: {fileID: 137717473903895176}
-  agent: {fileID: 2001421510}
-  anim: {fileID: 95565753606369354}
-  Headpos: {fileID: 4220266448927598}
-  Shootpos: {fileID: 5711708909543596257}
-  aud: {fileID: -3606242543276415143}
-  Health: 20
-  PlayerFaceSpeed: 20
-  SightAngle: 180
-  roamPauseTime: 10
-  roamDistance: 2
-  animTransSpeed: 8
-  drop: {fileID: 900889823605866966, guid: eaf42404c729ba94ba0eaeabd63206ae, type: 3}
-  dropChance: 10
-  FireRate: 0.2
-  ShotDistance: 10
-  ShotDamage: 5
-  BulletSpeed: 20
-  Bullet: {fileID: 4342121344313579874, guid: 87637990e7adcaa498337b284000b0ee, type: 3}
-  audShoot:
-  - {fileID: 8300000, guid: d7f7865a17229844093f4e4aabe78dd3, type: 3}
-  audShootVol: 0
 --- !u!195 &2001421510
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class LevelPad : MonoBehaviour
                     break;
             }
 
-            gameManager.instance.ChangeLevel(levelNum);
+            gameManager.instance.levelnum = levelNum;
         }
     }
 }

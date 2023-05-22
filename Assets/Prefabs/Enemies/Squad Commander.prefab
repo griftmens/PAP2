@@ -8,12 +8,40 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 900889823605866966, guid: 026b940f1b7be2d42b41f8c3704b123c, type: 3}
+    - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: ShotDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: SightAngle
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: dropChance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: ShotDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: roamDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: roamPauseTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: animTransSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1047724519691324, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_Name
-      value: Squad Commander (1)
+      value: Squad Commander
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_RootOrder
@@ -33,15 +61,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.5
+      value: -11.476685
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0729904
+      value: 0.00000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.099976
+      value: 0.70325017
       objectReference: {fileID: 0}
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_LocalRotation.w

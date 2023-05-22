@@ -25,6 +25,7 @@ public class gameManager : MonoBehaviour
     public GameObject abilitiesMenu;
 
     [Header("----- UI Elements / Menus -----")]
+    public Image DamageOverlay;
     public GameObject activeMenu;
     public TextMeshProUGUI message;
     public GameObject pauseMenu;
@@ -58,11 +59,6 @@ public class gameManager : MonoBehaviour
 
     [Header("----- Level stuff -----")]
     public int levelnum;
-    [SerializeField] GameObject Level1;
-    [SerializeField] GameObject Level2;
-    [SerializeField] GameObject Level3;
-    [SerializeField] GameObject Level4;
-    [SerializeField] GameObject Level5;
 
     public bool isPaused;
     float timeScaleOg;
@@ -265,48 +261,4 @@ public class gameManager : MonoBehaviour
     public void PlaySound(){
         sfxGame.PlayOneShot(clickSoungG);
     }
-
-    public void ChangeLevel(int level)
-    {
-        levelnum = level;
-        switch (level)
-        {
-            case 1:
-                Level1.SetActive(true); 
-                Level2.SetActive(false);
-                Level3.SetActive(false);
-                Level4.SetActive(false);
-                Level5.SetActive(false);
-                break;
-            case 2:
-                Level1.SetActive(false);
-                Level2.SetActive(true);
-                Level3.SetActive(false);
-                Level4.SetActive(false);
-                Level5.SetActive(false);
-                break;
-            case 3:
-                Level1.SetActive(false);
-                Level2.SetActive(false);
-                Level3.SetActive(true);
-                Level4.SetActive(false);
-                Level5.SetActive(false);
-                break;
-            case 4:
-                Level1.SetActive(false);
-                Level2.SetActive(false);
-                Level3.SetActive(false);
-                Level4.SetActive(true);
-                Level5.SetActive(false);
-                break;
-            case 5:
-                Level1.SetActive(false);
-                Level2.SetActive(false);
-                Level3.SetActive(false);
-                Level4.SetActive(false);
-                Level5.SetActive(true);
-                break;
-        }
-    }
-
 }

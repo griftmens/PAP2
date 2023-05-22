@@ -7,6 +7,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 900889823605866966, guid: 5e6d5d720cd5ee143ae04cdbe6a989a8, type: 3}
+    - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 4342121344313579874, guid: 730fe00ae1fb8ee43b9a62606397bb7d, type: 3}
+    - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: FireRate
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: ShotDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: dropChance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: BulletSpeed
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: ShotDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1981860918171908, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_Name
       value: Elite Gaurd
@@ -29,15 +57,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555062712112460, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.548976
+      value: -13.081888
       objectReference: {fileID: 0}
     - target: {fileID: 4555062712112460, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.085
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 4555062712112460, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6693115
+      value: -3.7897105
       objectReference: {fileID: 0}
     - target: {fileID: 4555062712112460, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70,6 +98,22 @@ PrefabInstance:
     - target: {fileID: 4555062712112460, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113923760211662823, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: m_Name
+      value: Shooting Pos
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711708909543596257, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711708909543596257, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.036
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711708909543596257, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2068
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}

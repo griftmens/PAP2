@@ -187,7 +187,6 @@ MonoBehaviour:
   abilities: 5
   overdriveTime: 3
   overdriveCooldown: 6
-  overlay: {fileID: 0}
   durationOverlay: 2
   fadeSpeed: 1.5
   durationTimer: 0

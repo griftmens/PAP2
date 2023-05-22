@@ -69,7 +69,7 @@ public class Player : MonoBehaviour, IDamage
     bool overdriveActive, overdriveWait;
     float overdriveTimer;
     [Header("----- Damage Overlay -----")]
-    public Image overlay;
+    Image overlay;
     public float durationOverlay;
     public float fadeSpeed;
     public float durationTimer;
@@ -131,6 +131,7 @@ public class Player : MonoBehaviour, IDamage
 
     void Start()
     {
+        overlay = gameManager.instance.DamageOverlay;
         hpOrig = hp;
         playerStamina = maxStamina;
         staminaOrig = playerStamina;

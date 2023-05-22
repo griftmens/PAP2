@@ -968,7 +968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &929040942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4174,8 +4174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dc3a610588a054d866dab39b3f674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mediumPrice: 10
-  heavyPrice: 20
+  mediumPrice: 500
+  heavyPrice: 1000
   medBought: 0
   heavyBought: 0
   GunLight: {fileID: 11400000, guid: 7ae85b0b37e2626408dd575cb4961043, type: 2}
@@ -10375,6 +10375,7 @@ MonoBehaviour:
   playerOfferings: 0
   shopMenu: {fileID: 1703086904}
   abilitiesMenu: {fileID: 0}
+  DamageOverlay: {fileID: 2106100676}
   activeMenu: {fileID: 0}
   message: {fileID: 5714153105981800946}
   pauseMenu: {fileID: 5516013377651854841}
@@ -10404,9 +10405,4 @@ MonoBehaviour:
   clickSoungG: {fileID: 8300000, guid: 6c24efd761d0d2442a9957e0088e5734, type: 3}
   enemiesRemaining: 0
   levelnum: 0
-  Level1: {fileID: 0}
-  Level2: {fileID: 0}
-  Level3: {fileID: 0}
-  Level4: {fileID: 0}
-  Level5: {fileID: 0}
   isPaused: 0
