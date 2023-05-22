@@ -13,26 +13,29 @@ public class ArenaEnter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch(gameManager.instance.levelnum)
+        if(other.CompareTag("Player"))
         {
-            case 1:
-                tpPos = spawn1.transform.position;
-                break;
-            case 2:
-                tpPos = spawn2.transform.position;
-                break;
-            case 3:
-                tpPos = spawn3.transform.position;
-                break;
-            case 4:
-                tpPos = spawn4.transform.position;
-                break;
-            case 5:
-                tpPos = spawn5.transform.position;
-                break;
+            switch (gameManager.instance.levelnum)
+            {
+                case 1:
+                    tpPos = spawn1.transform.position;
+                    break;
+                case 2:
+                    tpPos = spawn2.transform.position;
+                    break;
+                case 3:
+                    tpPos = spawn3.transform.position;
+                    break;
+                case 4:
+                    tpPos = spawn4.transform.position;
+                    break;
+                case 5:
+                    tpPos = spawn5.transform.position;
+                    break;
+            }
+            gameManager.instance.playerScript.GetComponent<CharacterController>().enabled = false;
+            gameManager.instance.playerScript.transform.position = tpPos;
+            gameManager.instance.playerScript.GetComponent<CharacterController>().enabled = true;
         }
-        gameManager.instance.playerScript.GetComponent<CharacterController>().enabled = false;
-        gameManager.instance.playerScript.transform.position = tpPos;
-        gameManager.instance.playerScript.GetComponent<CharacterController>().enabled = true;
     }
 }
