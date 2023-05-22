@@ -178,6 +178,8 @@ public class gameManager : MonoBehaviour
             playerScript.money = data.money;
             levelsCleared = data.levelsCleared;
             playerScript.offerings = data.offerings;
+            ShopManager.instance.medBought = data.medBought;
+            ShopManager.instance.heavyBought = data.heavyBought;
             playerScript.PickupGun(ShopManager.instance.GunLight);
             if (data.medBought)
             {

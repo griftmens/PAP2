@@ -166,6 +166,10 @@ public class Player : MonoBehaviour, IDamage
             {
                 Abilities();
             }
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                isReloading = true;
+            }
             if(isReloading)
             {
                 Reload();
