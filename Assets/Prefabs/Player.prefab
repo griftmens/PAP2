@@ -188,8 +188,8 @@ MonoBehaviour:
   overdriveTime: 3
   overdriveCooldown: 6
   overlay: {fileID: 0}
-  durationOverlay: 0
-  fadeSpeed: 0
+  durationOverlay: 2
+  fadeSpeed: 1.5
   durationTimer: 0
   shieldClip: {fileID: 8300000, guid: e41e18edcd66ed541a9ccfaaa7123f66, type: 3}
   absorbClip: {fileID: 8300000, guid: f15e997a049326a49904ecf640ba510e, type: 3}

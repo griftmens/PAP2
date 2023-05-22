@@ -123,6 +123,9 @@ public class Player : MonoBehaviour, IDamage
     RaycastHit hit;
     bool laserFirst;
     bool isAbilitie;
+    float speedOG;
+    int jumpMaxOG;
+    float spintMultiOG;
 
     #endregion
 
@@ -141,6 +144,9 @@ public class Player : MonoBehaviour, IDamage
         absorbAud = GetComponent<AudioSource>();
         runningAud = GetComponent<AudioSource>();
         shootAud = GetComponent<AudioSource>();
+        speedOG = playerSpeed;
+        jumpMaxOG = jumpMaxTimes;
+        spintMultiOG = sprintMultiplier;
     }
 
     void Update()
@@ -165,14 +171,16 @@ public class Player : MonoBehaviour, IDamage
             }
         }
 
-        //if(overlay.color.a > 0){
-        //    durationTimer += Time.deltaTime;
-        //    if(durationTimer > durationOverlay){
-        //        float tempAlpha = overlay.color.a;
-        //        tempAlpha -= Time.deltaTime * fadeSpeed;
-        //        overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, tempAlpha);
-        //    }
-        //}
+        if (overlay.color.a > 0)
+        {
+            durationTimer += Time.deltaTime;
+            if (durationTimer > durationOverlay)
+            {
+                float tempAlpha = overlay.color.a;
+                tempAlpha -= Time.deltaTime * fadeSpeed;
+                overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, tempAlpha);
+            }
+        }
     }
 
     void Movemente() {
@@ -253,9 +261,6 @@ public class Player : MonoBehaviour, IDamage
     IEnumerator Tired()
     {
         tired = true;
-        float speedOG = playerSpeed;
-        int jumpMaxOG = jumpMaxTimes;
-        float spintMultiOG = sprintMultiplier;
         playerSpeed *= tiredMultiplier;
         jumpMaxTimes = 0;
         yield return new WaitForSeconds(tiredTime);
@@ -540,7 +545,7 @@ public class Player : MonoBehaviour, IDamage
         playerSpeed *= 2;
         shootRate /= 2;
         yield return new WaitForSeconds(overdriveTime);
-        playerSpeed /= 2;
+        playerSpeed = speedOG;
         shootRate *= 2;
 
         overdriveActive = false;
