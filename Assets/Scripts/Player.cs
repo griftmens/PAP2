@@ -196,11 +196,19 @@ public class Player : MonoBehaviour, IDamage
 
         move = (transform.right * Input.GetAxis("Horizontal")) + (transform.forward * Input.GetAxis("Vertical"));
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (move != Vector3.zero)
         {
-            weAreSprinting = true;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                weAreSprinting = true;
+            }
+
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                weAreSprinting = false;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        else
         {
             weAreSprinting = false;
         }
