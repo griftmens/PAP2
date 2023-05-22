@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1491183282, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
+      propertyPath: dropChance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1471741602374830, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_Name
-      value: Basic Soldier
+      value: Basic Soldier (9)
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_RootOrder
@@ -17,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.210293
+      value: -3.1755066
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.115
+      value: -1.1370144
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.258911
+      value: 18.00293
       objectReference: {fileID: 0}
     - target: {fileID: 4543829338664524, guid: 0814aba0a5f87494cb000251ab82361f, type: 3}
       propertyPath: m_LocalRotation.w

@@ -134,10 +134,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic Soldier (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 5559020877082142410, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5562088565899897896, guid: b8304c5beba5de34da4c255840998ca1, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -17986,8 +17982,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elite Gaurd
       objectReference: {fileID: 0}
-    - target: {fileID: 8102493542771526359, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 8103907087320733462, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 900889823605866966, guid: 5e6d5d720cd5ee143ae04cdbe6a989a8, type: 3}
+    - target: {fileID: 8103907087320733462, guid: 21e114bf56152d042a3a6ed3e617474c, type: 3}
+      propertyPath: dropChance
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18068,10 +18068,6 @@ PrefabInstance:
     - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_Name
       value: Squad Commander
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543699473504089159, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6547606968966505557, guid: 2f9980e2c98fa114fbdb4fb51da671e6, type: 3}
       propertyPath: m_RootOrder
@@ -18651,6 +18647,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 903919051, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: heavyPrice
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 903919051, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: mediumPrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 929040941, guid: 093333c688aedf64f97ab9701563a924, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5516013378011552250, guid: 093333c688aedf64f97ab9701563a924, type: 3}
       propertyPath: m_Name
       value: UI
@@ -43547,7 +43555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608398763156440793, guid: 13222196526025e47ad183b3ad1b62cc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6608398763156440794, guid: 13222196526025e47ad183b3ad1b62cc, type: 3}
       propertyPath: m_RootOrder
