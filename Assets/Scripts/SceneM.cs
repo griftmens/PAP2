@@ -37,10 +37,10 @@ public class SceneM : MonoBehaviour
     }
 
     public void BackG(){
-        PlaySound();
         optionMain.SetActive(false);
         creditsMain.SetActive(false);
         uiMain.SetActive(true);
+        PlaySound();
     }
 
     public void CreditsG(){
@@ -59,7 +59,7 @@ public class SceneM : MonoBehaviour
     }
 
     public void ControlSFX(float sliderSFXM){
-        sfxMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFXM));
+        sfxMixer.SetFloat("SFXVol", Mathf.Log10(sliderSFXM) * 20);
     }
 
     public void OpenShowCase(){
