@@ -122,6 +122,7 @@ public class Player : MonoBehaviour, IDamage
     float staminaOrig;
     RaycastHit hit;
     bool laserFirst;
+    bool isAbilitie;
 
     #endregion
 

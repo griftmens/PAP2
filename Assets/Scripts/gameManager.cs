@@ -20,6 +20,9 @@ public class gameManager : MonoBehaviour
 
     [Header("----- Shop System -----")]
     public GameObject shopMenu;
+    
+    [Header("----- Abilities Menu -----")]
+    public GameObject abilitiesMenu;
 
     [Header("----- UI Elements / Menus -----")]
     public GameObject activeMenu;
@@ -95,6 +98,13 @@ public class gameManager : MonoBehaviour
         activeMenu = shopMenu;
         activeMenu.SetActive(true);
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void Ab(){
+        activeMenu = abilitiesMenu;
+        activeMenu.SetActive(true);
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
     }
 

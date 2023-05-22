@@ -2730,7 +2730,7 @@ MonoBehaviour:
   m_MinValue: 0.00001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.51
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2762,6 +2762,8 @@ MonoBehaviour:
   musicMixer: {fileID: 0}
   sfxGame: {fileID: 6998534951168506291}
   sfxMixer: {fileID: 24100000, guid: 0a0cddfe5415dff4dbd2584e130e48e8, type: 2}
+  gameMusic: {fileID: 0}
+  sfxSounds: {fileID: 8010695310323142423}
 --- !u!1 &1107884634365513123
 GameObject:
   m_ObjectHideFlags: 0
@@ -6203,10 +6205,10 @@ RectTransform:
   m_Father: {fileID: 5516013378011552254}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1620, y: -780}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5516013377651854844
 CanvasRenderer:
@@ -9922,7 +9924,7 @@ MonoBehaviour:
   m_MinValue: 0.00001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.59
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9954,6 +9956,8 @@ MonoBehaviour:
   musicMixer: {fileID: 24100000, guid: e920ab992e1f7d047acef6fed7675067, type: 2}
   sfxGame: {fileID: 0}
   sfxMixer: {fileID: 0}
+  gameMusic: {fileID: 5902596037896778070}
+  sfxSounds: {fileID: 0}
 --- !u!1 &8367628562127662584
 GameObject:
   m_ObjectHideFlags: 0
@@ -10297,6 +10301,7 @@ MonoBehaviour:
   levelsCleared: 0
   playerOfferings: 0
   shopMenu: {fileID: 1703086904}
+  abilitiesMenu: {fileID: 0}
   activeMenu: {fileID: 0}
   message: {fileID: 5714153105981800946}
   pauseMenu: {fileID: 5516013377651854841}
