@@ -16,7 +16,15 @@ public class PlayerData
         money = gameManager.instance.playerScript.money;
         offerings = gameManager.instance.playerScript.offerings;
         levelsCleared = gameManager.instance.levelsCleared;
-        medBought = ShopManager.instance.medBought;
-        heavyBought = ShopManager.instance.heavyBought;
+        if (ShopManager.instance)
+        {
+            medBought = ShopManager.instance.medBought;
+            heavyBought = ShopManager.instance.heavyBought;
+        }
+        else
+        {
+            medBought= false;
+            heavyBought= false;
+        }
     }
 }

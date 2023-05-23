@@ -72,6 +72,10 @@ public class gameManager : MonoBehaviour
         timeScaleOg = Time.timeScale;
         optionMenu.SetActive(false);
         StartCoroutine(StartLoad());
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            playerScript.abilities = 0;
+        }
     }
 
     void Update()
@@ -160,7 +164,6 @@ public class gameManager : MonoBehaviour
         levelsCleared = 0;
         playerScript.offerings = 0;
         playerScript.money = 0;
-        playerScript.gunsInventory.Clear();
         SaveSystem.SavePlayer();
     }
 
