@@ -33,6 +33,9 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] int shootEnergy;
     public MeshRenderer gunMaterial;
     public MeshFilter gunModel;
+    public GameObject gunPos;
+    public GameObject gunReloadPos;
+    public GameObject gunStationaryPos;
     public int selectedGun;
     [SerializeField] float ammoCount;
     [SerializeField] int ammoMax;
@@ -313,12 +316,22 @@ public class Player : MonoBehaviour, IDamage
 
     void Reload()
     {
-        ammoCount += (ammoMax / reloadTime) * Time.deltaTime;
-        if(ammoCount >= ammoMax)
+        gunPos.transform.rotation = gunReloadPos.transform.rotation;
+        if (ammoCount >= ammoMax)
         {
             isReloading = false;
+            ResetGunPosition();
+        }
+        else
+        {
+            ammoCount += (ammoMax / reloadTime) * Time.deltaTime;
         }
         UIUpdate();
+    }
+
+    void ResetGunPosition()
+    {
+        gunPos.transform.rotation = gunStationaryPos.transform.rotation;
     }
 
     void FireRateUI()
