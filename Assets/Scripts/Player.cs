@@ -532,7 +532,6 @@ public class Player : MonoBehaviour, IDamage
                 gettingPosition = false;
                 laserPrediction.SetActive(gettingPosition);
                 laserstrikeTimer = laserstrikeTime;
-                Debug.Log("Audio laser activate");
                 StartCoroutine(LaserStrike());
             }
         }
