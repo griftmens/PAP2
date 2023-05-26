@@ -82,10 +82,12 @@ public class Player : MonoBehaviour, IDamage
     [SerializeField] AudioClip absorbClip;
     [SerializeField] AudioClip runningClip;
     [SerializeField] AudioClip shootClip;
+    [SerializeField] AudioClip damagePlayerClip;
     [SerializeField] AudioSource shieldAud;
     [SerializeField] AudioSource absorbAud;
     [SerializeField] AudioSource runningAud;
     [SerializeField] AudioSource shootAud;
+    [SerializeField] AudioSource damagePlayerAud;
 
     [Header("----- Other -----")]
     [SerializeField] int absorptionTime;
@@ -148,6 +150,7 @@ public class Player : MonoBehaviour, IDamage
         absorbAud = GetComponent<AudioSource>();
         runningAud = GetComponent<AudioSource>();
         shootAud = GetComponent<AudioSource>();
+        damagePlayerAud = GetComponent<AudioSource>();
         speedOG = playerSpeed;
         jumpMaxOG = jumpMaxTimes;
         spintMultiOG = sprintMultiplier;
@@ -263,6 +266,7 @@ public class Player : MonoBehaviour, IDamage
     {
         if (!phaseActive)
         {
+            damagePlayerAud.PlayOneShot(damagePlayerClip, 0.7f);
             hp -= Damage;
             UIUpdate();
             if (hp <= 0)

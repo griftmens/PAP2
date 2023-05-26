@@ -55,7 +55,7 @@ public class SceneM : MonoBehaviour
     }
 
     public void ControlMusic(float sliderMusicM){
-        audioMixer.SetFloat("MusicVol", Mathf.Log10(sliderMusicM) * 20);
+        audioMixer.SetFloat("GameMusicVol", Mathf.Log10(sliderMusicM) * 20);
     }
 
     public void ControlSFX(float sliderSFXM){
