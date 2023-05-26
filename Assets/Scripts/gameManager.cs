@@ -80,7 +80,7 @@ public class gameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel") && activeMenu == null)
+        if (Input.GetKeyDown(KeyCode.Escape) && (activeMenu == null || activeMenu == pauseMenu))
         {
             isPaused = !isPaused;
             activeMenu = pauseMenu;
@@ -91,6 +91,10 @@ public class gameManager : MonoBehaviour
             else
                 Resume();
         }
+        //else if(Input.GetButtonDown("Cancel") && activeMenu == pauseMenu)
+        //{
+
+        //}
     }
 
     public void Shop()
