@@ -36,6 +36,10 @@ PrefabInstance:
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
+      propertyPath: audShootVol
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001421509, guid: c266c61b42ce56a4ca7e9190ef1209e3, type: 3}
       propertyPath: ShotDistance
       value: 100
       objectReference: {fileID: 0}
