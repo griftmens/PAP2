@@ -259,10 +259,12 @@ MonoBehaviour:
   absorbClip: {fileID: 8300000, guid: f15e997a049326a49904ecf640ba510e, type: 3}
   runningClip: {fileID: 8300000, guid: c84dbaaef7f6bcb46b7643054c4d972a, type: 3}
   shootClip: {fileID: 8300000, guid: 60258ae9ff6212f4881766649d1ecf83, type: 3}
+  damagePlayerClip: {fileID: 8300000, guid: 9f172f1b6c0f2254ebc7c87b8b6332aa, type: 3}
   shieldAud: {fileID: 0}
   absorbAud: {fileID: 0}
   runningAud: {fileID: 0}
   shootAud: {fileID: 0}
+  damagePlayerAud: {fileID: 0}
   absorptionTime: 10
   absorptionCooldown: 20
   absorbChance: 3
@@ -470,7 +472,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 32
   m_CollisionDetection: 0
 --- !u!1 &5504498988453833766
 GameObject:

@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4617166203472502167, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: Priority
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: drop
       value: 
@@ -22,6 +26,10 @@ PrefabInstance:
     - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: dropChance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: audShootVol
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 91317749, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: ShotDistance
@@ -102,6 +110,10 @@ PrefabInstance:
     - target: {fileID: 4953570177729582, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680673523491546371, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
+      propertyPath: m_Height
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08f5427fe0d15ad47a5a1bb70b6156c7, type: 3}
